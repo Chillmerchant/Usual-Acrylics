@@ -513,7 +513,6 @@
                 <div class="md:col-span-5">
                     <div class="rounded-3xl overflow-hidden shadow-2xl luxury-shadow">
                         <img src="images/Miracle.png" alt="Miracle" class="w-full h-full object-cover">
-                        <!-- Replace with your actual photo: just drop your selfie or studio photo named "artist.jpg" into the images folder -->
                     </div>
                 </div>
                 <div class="md:col-span-7">
@@ -723,22 +722,31 @@
 
             <div class="flex items-center gap-x-2 mb-8">
                 <div class="flex-1 h-1 bg-[#E8B4BC]/30 rounded-full overflow-hidden">
-                    <div id="modal-booking-progress" class="h-1 bg-[#C77D8A] transition-all" style="width: 33%"></div>
+                    <div id="modal-booking-progress" class="h-1 bg-[#C77D8A] transition-all" style="width: 25%"></div>
                 </div>
-                <div class="text-xs font-medium text-[#8B6F73]">Step <span id="modal-step-number">1</span> of 3</div>
+                <div class="text-xs font-medium text-[#8B6F73]">Step <span id="modal-step-number">1</span> of 4</div>
             </div>
             
             <form id="modal-booking-form">
-                <!-- Step 1 -->
+                <!-- Step 1: Choose Service (now much clearer) -->
                 <div id="modal-booking-step-1">
                     <div class="uppercase tracking-widest text-xs font-semibold mb-3 text-[#C77D8A]">CHOOSE YOUR SERVICE</div>
+                    
+                    <p class="text-sm text-[#6B5559] mb-6 bg-[#FDF6F0] border border-[#E8B4BC]/30 rounded-2xl p-4">
+                        Quick preset options below 👇<br>
+                        Want a fully custom look with live color preview, shape, length, and glitter? 
+                        <span onclick="hideBookingModal(); document.getElementById('studio').scrollIntoView({behavior:'smooth'})" class="text-[#C77D8A] underline cursor-pointer font-medium">Use the Design Studio</span> instead and add to cart.
+                    </p>
                     
                     <div class="space-y-3">
                         <label class="flex items-center gap-x-4 border border-[#E8B4BC]/50 hover:border-[#C77D8A] transition-colors rounded-3xl p-5 cursor-pointer has-[:checked]:border-[#C77D8A] has-[:checked]:bg-[#FDF6F0]">
                             <input type="radio" name="service" value="Signature Acrylic Set — $128" checked class="accent-[#C77D8A] scale-110">
                             <div class="flex-1">
-                                <div class="font-semibold">Signature Acrylic Set</div>
-                                <div class="text-xs text-[#8B6F73]">90 min • Premium gel polish from Beetles &amp; Jodsone</div>
+                                <div class="flex items-center justify-between">
+                                    <div class="font-semibold">Signature Acrylic Set</div>
+                                    <div class="px-3 py-0.5 text-xs font-medium bg-[#C77D8A] text-white rounded-3xl">Most Popular</div>
+                                </div>
+                                <div class="text-xs text-[#8B6F73]">Full acrylic extensions + premium Beetles or Jodsone gel polish of your choice • ~90 minutes</div>
                             </div>
                             <div class="font-semibold">$128</div>
                         </label>
@@ -747,7 +755,7 @@
                             <input type="radio" name="service" value="The Usual Manicure — $78" class="accent-[#C77D8A] scale-110">
                             <div class="flex-1">
                                 <div class="font-semibold">The Usual Manicure</div>
-                                <div class="text-xs text-[#8B6F73]">60 min • Gel polish + strengthening treatment</div>
+                                <div class="text-xs text-[#8B6F73]">Gel manicure on your natural nails only + strengthening treatment • ~60 minutes</div>
                             </div>
                             <div class="font-semibold">$78</div>
                         </label>
@@ -756,7 +764,7 @@
                             <input type="radio" name="service" value="Nail Art &amp; Design — $95+" class="accent-[#C77D8A] scale-110">
                             <div class="flex-1">
                                 <div class="font-semibold">Nail Art &amp; Design</div>
-                                <div class="text-xs text-[#8B6F73]">75–120 min • Hand-painted florals or custom artwork</div>
+                                <div class="text-xs text-[#8B6F73]">Full acrylic set + beautiful hand-painted designs or custom nail art • 75–120 minutes</div>
                             </div>
                             <div class="font-semibold">$95+</div>
                         </label>
@@ -765,7 +773,7 @@
                     <button type="button" onclick="nextBookingModalStep()" class="mt-10 w-full py-4 bg-[#5C2E3D] text-white font-semibold rounded-3xl">Continue to Date &amp; Time</button>
                 </div>
                 
-                <!-- Step 2 -->
+                <!-- Step 2: Date & Time -->
                 <div id="modal-booking-step-2" class="hidden">
                     <div class="uppercase tracking-widest text-xs font-semibold mb-3 text-[#C77D8A]">PICK YOUR DATE &amp; TIME</div>
                     
@@ -788,11 +796,11 @@
                     
                     <div class="flex gap-4">
                         <button type="button" onclick="prevBookingModalStep()" class="flex-1 py-4 border border-[#5C2E3D] text-[#5C2E3D] font-semibold rounded-3xl">Back</button>
-                        <button type="button" onclick="nextBookingModalStep()" class="flex-1 py-4 bg-[#5C2E3D] text-white font-semibold rounded-3xl">Continue</button>
+                        <button type="button" onclick="nextBookingModalStep()" class="flex-1 py-4 bg-[#5C2E3D] text-white font-semibold rounded-3xl">Continue to Details</button>
                     </div>
                 </div>
                 
-                <!-- Step 3 -->
+                <!-- Step 3: Your Details -->
                 <div id="modal-booking-step-3" class="hidden">
                     <div class="uppercase tracking-widest text-xs font-semibold mb-3 text-[#C77D8A]">YOUR DETAILS</div>
                     
@@ -814,12 +822,30 @@
                     
                     <div class="flex gap-4 mt-8">
                         <button type="button" onclick="prevBookingModalStep()" class="flex-1 py-4 border border-[#5C2E3D] text-[#5C2E3D] font-semibold rounded-3xl">Back</button>
+                        <button type="button" onclick="nextBookingModalStep()" class="flex-1 py-4 bg-[#5C2E3D] text-white font-semibold rounded-3xl">CONFIRM</button>
+                    </div>
+                </div>
+                
+                <!-- Step 4: Order Summary -->
+                <div id="modal-booking-step-4" class="hidden">
+                    <div class="uppercase tracking-widest text-xs font-semibold mb-3 text-[#C77D8A]">ORDER SUMMARY</div>
+                    
+                    <div id="order-summary-content" class="bg-[#FDF6F0] border border-[#E8B4BC]/40 rounded-3xl p-6 mb-6 text-sm"></div>
+                    
+                    <div class="flex justify-between items-baseline mb-2">
+                        <div class="text-base font-semibold">Total due at appointment</div>
+                        <div id="summary-total" class="text-3xl font-bold text-[#5C2E3D]"></div>
+                    </div>
+                    <div class="text-xs text-[#8B6F73] mb-8">Includes $25 deposit (applied toward your service)</div>
+                    
+                    <div class="flex gap-4">
+                        <button type="button" onclick="prevBookingModalStep()" class="flex-1 py-4 border border-[#5C2E3D] text-[#5C2E3D] font-semibold rounded-3xl">Back</button>
                         <button type="button" onclick="proceedToCashAppPayment()" class="flex-1 py-4 bg-[#5C2E3D] text-white font-semibold rounded-3xl flex items-center justify-center gap-x-2">
-                            CONFIRM &amp; PAY VIA CASH APP <i class="fa-solid fa-arrow-right"></i>
+                            PAY VIA CASH APP <i class="fa-solid fa-arrow-right"></i>
                         </button>
                     </div>
                     
-                    <div class="text-center mt-6 text-xs text-[#8B6F73]">You’ll receive a confirmation email within minutes. 48-hour cancellation policy.</div>
+                    <div class="text-center mt-6 text-xs text-[#8B6F73]">48-hour free cancellation • Confirmation email sent immediately</div>
                 </div>
             </form>
         </div>
@@ -961,7 +987,6 @@
             { brand: "Beetles", code: "e302", name: "Beetles e302", hex: "#3D2B1F", price: 75, inStock: true }
         ];
 
-        // UPDATED TESTIMONIALS (added one more)
         const testimonials = [
             { quote: "Usual Acrylics is now my go-to for every important meeting I go to. The Ivory Lace is my signature now. It makes every outfit I wear look expensive.", name: "Elena Voss", title: "Creative Director, Atelier", rating: 5, avatar: "images/glasses.jpg" },
             { quote: "I got the Burgundy Rose for my wedding and it photographed beautifully. You made me feel so special the entire appointment.", name: "Sofia Patel", title: "Bride, March 2025", rating: 5, avatar: "images/melany.jpg" },
@@ -1336,7 +1361,7 @@
             document.getElementById('modal-booking-step-2').classList.add('hidden');
             document.getElementById('modal-booking-step-3').classList.remove('hidden');
             currentModalBookingStep = 3;
-            document.getElementById('modal-booking-progress').style.width = '100%';
+            document.getElementById('modal-booking-progress').style.width = '75%';
             document.getElementById('modal-step-number').innerHTML = '3';
         }
 
@@ -1350,8 +1375,17 @@
                 document.getElementById('modal-booking-step-1').classList.remove('hidden');
                 document.getElementById('modal-booking-step-2').classList.add('hidden');
                 document.getElementById('modal-booking-step-3').classList.add('hidden');
-                document.getElementById('modal-booking-progress').style.width = '33%';
+                document.getElementById('modal-booking-step-4').classList.add('hidden');
+                document.getElementById('modal-booking-progress').style.width = '25%';
                 document.getElementById('modal-step-number').innerHTML = '1';
+            } else {
+                currentModalBookingStep = 3;
+                document.getElementById('modal-booking-step-1').classList.add('hidden');
+                document.getElementById('modal-booking-step-2').classList.add('hidden');
+                document.getElementById('modal-booking-step-3').classList.remove('hidden');
+                document.getElementById('modal-booking-step-4').classList.add('hidden');
+                document.getElementById('modal-booking-progress').style.width = '75%';
+                document.getElementById('modal-step-number').innerHTML = '3';
             }
         }
 
@@ -1367,14 +1401,21 @@
                 document.getElementById('modal-booking-step-1').classList.add('hidden');
                 document.getElementById('modal-booking-step-2').classList.remove('hidden');
                 currentModalBookingStep = 2;
-                document.getElementById('modal-booking-progress').style.width = '66%';
+                document.getElementById('modal-booking-progress').style.width = '50%';
                 document.getElementById('modal-step-number').innerHTML = '2';
             } else if (currentModalBookingStep === 2) {
                 document.getElementById('modal-booking-step-2').classList.add('hidden');
                 document.getElementById('modal-booking-step-3').classList.remove('hidden');
                 currentModalBookingStep = 3;
-                document.getElementById('modal-booking-progress').style.width = '100%';
+                document.getElementById('modal-booking-progress').style.width = '75%';
                 document.getElementById('modal-step-number').innerHTML = '3';
+            } else if (currentModalBookingStep === 3) {
+                document.getElementById('modal-booking-step-3').classList.add('hidden');
+                document.getElementById('modal-booking-step-4').classList.remove('hidden');
+                currentModalBookingStep = 4;
+                document.getElementById('modal-booking-progress').style.width = '100%';
+                document.getElementById('modal-step-number').innerHTML = '4';
+                renderOrderSummary();
             }
         }
 
@@ -1383,15 +1424,78 @@
                 document.getElementById('modal-booking-step-2').classList.add('hidden');
                 document.getElementById('modal-booking-step-1').classList.remove('hidden');
                 currentModalBookingStep = 1;
-                document.getElementById('modal-booking-progress').style.width = '33%';
+                document.getElementById('modal-booking-progress').style.width = '25%';
                 document.getElementById('modal-step-number').innerHTML = '1';
             } else if (currentModalBookingStep === 3) {
-                document.getElementById('modal-booking-step-3').classList.add('hidden');
-                document.getElementById('modal-booking-step-2').classList.remove('hidden');
-                currentModalBookingStep = 2;
-                document.getElementById('modal-booking-progress').style.width = '66%';
-                document.getElementById('modal-step-number').innerHTML = '2';
+                if (isFromCart) {
+                    document.getElementById('modal-booking-step-3').classList.add('hidden');
+                    document.getElementById('modal-booking-step-2').classList.remove('hidden');
+                    currentModalBookingStep = 2;
+                    document.getElementById('modal-booking-progress').style.width = '50%';
+                    document.getElementById('modal-step-number').innerHTML = '2';
+                } else {
+                    document.getElementById('modal-booking-step-3').classList.add('hidden');
+                    document.getElementById('modal-booking-step-2').classList.remove('hidden');
+                    currentModalBookingStep = 2;
+                    document.getElementById('modal-booking-progress').style.width = '50%';
+                    document.getElementById('modal-step-number').innerHTML = '2';
+                }
+            } else if (currentModalBookingStep === 4) {
+                document.getElementById('modal-booking-step-4').classList.add('hidden');
+                document.getElementById('modal-booking-step-3').classList.remove('hidden');
+                currentModalBookingStep = 3;
+                document.getElementById('modal-booking-progress').style.width = '75%';
+                document.getElementById('modal-step-number').innerHTML = '3';
             }
+        }
+
+        function renderOrderSummary() {
+            const container = document.getElementById('order-summary-content');
+            let html = '';
+            let total = 25;
+
+            if (isFromCart && cartForBooking.length > 0) {
+                html += `<div class="font-semibold text-base mb-4">Custom Cart Order</div>`;
+                cartForBooking.forEach(item => {
+                    total += item.price;
+                    html += `
+                        <div class="flex justify-between py-3 border-b last:border-b-0">
+                            <div>
+                                <div class="font-medium">${item.name}</div>
+                                <div class="text-xs text-[#8B6F73]">${item.shape} • length ${item.length} ${item.glitter ? '• + Glitter' : ''}</div>
+                            </div>
+                            <div class="font-semibold">$${item.price}</div>
+                        </div>
+                    `;
+                });
+            } else {
+                const serviceEl = document.querySelector('#modal-booking-form input[name="service"]:checked');
+                const serviceText = serviceEl ? serviceEl.value : 'Signature Acrylic Set — $128';
+                let servicePrice = 128;
+                if (serviceText.includes('$78')) servicePrice = 78;
+                else if (serviceText.includes('$95')) servicePrice = 95;
+                total += servicePrice;
+                html += `
+                    <div class="flex justify-between py-4 border-b">
+                        <div class="font-medium">${serviceText}</div>
+                        <div class="font-semibold">$${servicePrice}</div>
+                    </div>
+                `;
+            }
+
+            const date = document.getElementById('modal-booking-date').value || 'TBD';
+            const time = document.getElementById('modal-booking-time').value || 'TBD';
+            const name = document.getElementById('modal-client-name').value.trim() || 'Client';
+
+            html += `
+                <div class="pt-4 text-xs space-y-2">
+                    <div class="flex justify-between"><span class="text-[#8B6F73]">Date &amp; Time</span><span class="font-medium">${date} at ${time}</span></div>
+                    <div class="flex justify-between"><span class="text-[#8B6F73]">Client</span><span class="font-medium">${name}</span></div>
+                </div>
+            `;
+
+            container.innerHTML = html;
+            document.getElementById('summary-total').innerHTML = `$${total}`;
         }
 
         function proceedToCashAppPayment() {
@@ -1402,21 +1506,21 @@
             const time = document.getElementById('modal-booking-time').value || 'TBD';
 
             let messageBody = '';
-            let total = 0;
+            let total = 25;
 
             if (isFromCart && cartForBooking.length > 0) {
                 let itemsList = cartForBooking.map((item, idx) => {
                     return `${idx+1}. ${item.name} (${item.shape}, length ${item.length})${item.glitter ? ' + Glitter' : ''} - $${item.price}`;
                 }).join('\n');
                 messageBody = `CUSTOM CART ORDER FROM DESIGN STUDIO:\n${itemsList}\n\nAdditional Notes: ${notes}`;
-                total = cartForBooking.reduce((acc, item) => acc + item.price, 0) + 25;
+                total += cartForBooking.reduce((acc, item) => acc + item.price, 0);
             } else {
                 const serviceEl = document.querySelector('#modal-booking-form input[name="service"]:checked');
                 const service = serviceEl ? serviceEl.value : 'Signature Acrylic Set — $128';
                 let baseTotal = 128;
                 if (service.includes('$78')) baseTotal = 78;
                 else if (service.includes('$95')) baseTotal = 95;
-                total = baseTotal;
+                total += baseTotal;
                 messageBody = `Service: ${service}\nNotes: ${notes}`;
             }
 
@@ -1439,6 +1543,36 @@
                     hideBookingModal();
                     isFromCart = false;
                     cartForBooking = [];
+
+                    let orderHTML = '';
+                    let finalTotal = 25;
+
+                    if (cartForBooking.length > 0) {
+                        orderHTML = `<div class="font-semibold mb-3">Your Order</div>`;
+                        cartForBooking.forEach(item => {
+                            finalTotal += item.price;
+                            orderHTML += `
+                                <div class="flex justify-between text-sm py-2 border-b last:border-none">
+                                    <div>${item.name} <span class="text-[#8B6F73]">(${item.shape} • length ${item.length})</span></div>
+                                    <div>$${item.price}</div>
+                                </div>
+                            `;
+                        });
+                    } else {
+                        const serviceEl = document.querySelector('#modal-booking-form input[name="service"]:checked');
+                        const serviceText = serviceEl ? serviceEl.value : 'Signature Acrylic Set — $128';
+                        let price = 128;
+                        if (serviceText.includes('$78')) price = 78;
+                        else if (serviceText.includes('$95')) price = 95;
+                        finalTotal += price;
+                        orderHTML = `
+                            <div class="flex justify-between text-sm py-3 border-b">
+                                <div class="font-medium">${serviceText}</div>
+                                <div class="font-semibold">$${price}</div>
+                            </div>
+                        `;
+                    }
+
                     const successHTML = `
                         <div class="fixed inset-0 bg-black/80 z-[300] flex items-center justify-center p-4" onclick="if(event.target === this) this.remove()">
                             <div onclick="event.stopImmediatePropagation()" class="bg-white rounded-3xl max-w-md w-full p-10 text-center">
@@ -1446,15 +1580,15 @@
                                     <i class="fa-solid fa-check text-emerald-600 text-5xl"></i>
                                 </div>
                                 <div class="text-3xl font-semibold tracking-tight">Appointment secured!</div>
-                                <div class="mt-4 text-[#6B5559]">Cash App opened + detailed booking email sent to pence.sean@live.jobcorps.org with your custom details.</div>
-                                <div class="mt-8 text-left bg-[#FDF6F0] p-5 rounded-2xl border border-[#E8B4BC]/40 text-sm">
-                                    <div class="font-semibold mb-2">Next steps:</div>
-                                    <div class="text-[#6B5559] space-y-1">
-                                        • Confirmation email will arrive shortly<br>
-                                        • Reply to confirm details if needed<br>
-                                        • Arrive 10 minutes early
+                                
+                                <div class="mt-8 text-left bg-[#FDF6F0] p-6 rounded-2xl border border-[#E8B4BC]/40">
+                                    ${orderHTML}
+                                    <div class="flex justify-between mt-6 pt-6 border-t font-semibold text-lg">
+                                        <div>Total due</div>
+                                        <div>$${finalTotal}</div>
                                     </div>
                                 </div>
+                                
                                 <button onclick="this.closest('.fixed').remove()" class="mt-10 w-full py-4 bg-[#5C2E3D] text-white font-semibold rounded-3xl">RETURN TO HOME</button>
                             </div>
                         </div>
@@ -1470,7 +1604,6 @@
                 });
         }
 
-        // ==================== TESTIMONIAL CAROUSEL ====================
         function renderTestimonials() {
             const track = document.getElementById('testimonial-track');
             track.innerHTML = '';
@@ -1549,7 +1682,6 @@
             });
         }
 
-        // Scroll reveal
         function initScrollReveal() {
             const reveals = document.querySelectorAll('.reveal');
             const observer = new IntersectionObserver((entries) => {
@@ -1616,14 +1748,12 @@
             modal.classList.add('hidden');
         }
 
-        // NEW: FAQ toggle
         function toggleFaq(el) {
             el.classList.toggle('open');
             const icon = el.querySelector('i');
             icon.style.transform = el.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0)';
         }
 
-        // Main initialization
         function initializeWebsite() {
             initTailwind();
             initScrollProgress();
@@ -1638,7 +1768,6 @@
             
             renderGelPolishes();
             
-            // Default preview
             setTimeout(() => {
                 const preview = document.getElementById('nail-preview');
                 const firstInStock = gelPolishes.find(p => p.inStock !== false) || gelPolishes[0];
@@ -1660,7 +1789,7 @@
             if (lengthSlider) lengthSlider.addEventListener('input', updateLength);
             setTimeout(() => updateLength(), 150);
             
-            console.log('%c✅ Usual Acrylics website FULLY UPGRADED! ✨ Meet Sean + FAQ + floating button added.', 'color:#C77D8A; font-weight:600; font-size:13px');
+            console.log('%c✅ Usual Acrylics website FULLY UPGRADED! ✨ 4-step booking modal with clearer service selection added.', 'color:#C77D8A; font-weight:600; font-size:13px');
         }
 
         window.onload = initializeWebsite;
