@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Usual Acrylics — Solo nail artist in McKinney offering premium gel polishes from Beetles and Jodsone. Flawless acrylics, beautiful shades, and an unforgettable experience.">
+    <meta name="description" content="Usual Acrylics — Solo nail artist in McKinney, TX offering premium Beetles & Jodsone gel polishes. Flawless acrylics, beautiful custom designs, and a truly special experience.">
+    <!-- Open Graph / Social sharing -->
+    <meta property="og:title" content="Usual Acrylics • Solo Nail Artist • McKinney, TX">
+    <meta property="og:description" content="Premium gel manicures in a warm studio. Book your moment of beauty.">
+    <meta property="og:image" content="https://lucky-kleicha-27dcd3.netlify.app/images/og-image.jpg">
+    <meta property="og:url" content="https://lucky-kleicha-27dcd3.netlify.app">
+    <meta property="og:type" content="website">
     <title>Usual Acrylics • Solo Nail Artist • McKinney, TX</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -235,7 +241,6 @@
             .hero-title {
                 font-size: 42px !important;
             }
-            /* Extra breathing room in studio on phones */
             #studio > div > div {
                 gap: 2rem !important;
             }
@@ -244,6 +249,28 @@
         /* Ensure no horizontal overflow ever */
         .overflow-safe {
             overflow-x: hidden;
+        }
+
+        /* NEW: Floating book button */
+        .floating-book {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        /* NEW: FAQ accordion */
+        .faq-item {
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 300px;
         }
     </style>
 </head>
@@ -268,6 +295,7 @@
                 <div class="hidden md:flex items-center gap-x-9 text-sm font-medium tracking-[-0.2px]">
                     <a href="#studio" class="hover:text-[#C77D8A] transition-colors px-3 py-1">Design Studio</a>
                     <a href="#experience" class="hover:text-[#C77D8A] transition-colors px-3 py-1">The Experience</a>
+                    <a href="#artist" class="hover:text-[#C77D8A] transition-colors px-3 py-1">Meet Sean</a>
                     <a href="#stories" class="hover:text-[#C77D8A] transition-colors px-3 py-1">Stories</a>
                 </div>
 
@@ -277,7 +305,6 @@
                         <span id="cart-count" class="absolute -top-1 -right-1 bg-[#C77D8A] text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">0</span>
                     </div>
                     
-                    <!-- Responsive booking button -->
                     <button onclick="showBookingModal()" class="magnetic-btn group px-5 md:px-8 py-3 md:py-[15px] bg-[#5C2E3D] hover:bg-[#3D2B2E] transition-all text-white text-xs md:text-sm font-semibold rounded-3xl flex items-center gap-x-2 shadow-lg shadow-[#5C2E3D]/40 active:scale-[0.985]">
                         <span class="hidden sm:inline">Secure Your Time</span>
                         <span class="sm:hidden">Book</span>
@@ -320,13 +347,13 @@
                 
                 <div class="mt-16 flex items-center gap-x-8">
                     <div class="flex -space-x-4">
-                        <div class="w-9 h-9 bg-white ring-[2.5px] ring-[#FDF6F0] rounded-full overflow-hidden ring-offset-2 ring-offset-[#FDF6F0]"><img src="https://i.pravatar.cc/36?img=28" class="object-cover" alt=""></div>
-                        <div class="w-9 h-9 bg-white ring-[2.5px] ring-[#FDF6F0] rounded-full overflow-hidden ring-offset-2 ring-offset-[#FDF6F0]"><img src="https://i.pravatar.cc/36?img=40" class="object-cover" alt=""></div>
-                        <div class="w-9 h-9 bg-white ring-[2.5px] ring-[#FDF6F0] rounded-full overflow-hidden ring-offset-2 ring-offset-[#FDF6F0]"><img src="https://i.pravatar.cc/36?img=47" class="object-cover" alt=""></div>
-                        <div class="w-9 h-9 bg-white ring-[2.5px] ring-[#FDF6F0] rounded-full overflow-hidden ring-offset-2 ring-offset-[#FDF6F0]"><img src="https://i.pravatar.cc/36?img=32" class="object-cover" alt=""></div>
+                        <div class="w-9 h-9 bg-white ring-[2.5px] ring-[#FDF6F0] rounded-full overflow-hidden ring-offset-2 ring-offset-[#FDF6F0]"><img src="images/glasses.jpg" class="object-cover" alt=""></div>
+                        <div class="w-9 h-9 bg-white ring-[2.5px] ring-[#FDF6F0] rounded-full overflow-hidden ring-offset-2 ring-offset-[#FDF6F0]"><img src="images/melany.jpg" class="object-cover" alt=""></div>
+                        <div class="w-9 h-9 bg-white ring-[2.5px] ring-[#FDF6F0] rounded-full overflow-hidden ring-offset-2 ring-offset-[#FDF6F0]"><img src="images/melcxo.jpg" class="object-cover" alt=""></div>
+                        <div class="w-9 h-9 bg-white ring-[2.5px] ring-[#FDF6F0] rounded-full overflow-hidden ring-offset-2 ring-offset-[#FDF6F0]"><img src="images/melanymusillo.jpg" class="object-cover" alt=""></div>
                     </div>
                     <div>
-                        <div class="font-semibold text-sm">Joined by <span class="text-[#C77D8A]">100</span> women this year</div>
+                        <div class="font-semibold text-sm">Joined by <span class="text-[#C77D8A]">25</span> women this year</div>
                         <div class="text-xs text-[#8B6F73]">Average rating: 4.98 / 5</div>
                     </div>
                 </div>
@@ -346,7 +373,6 @@
     <!-- DESIGN STUDIO -->
     <section id="studio" class="bg-white py-20 border-y border-[#E8B4BC]/30">
         <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
-            <!-- Explicit single-column on mobile + gap adjustment -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-x-12 lg:gap-x-12 gap-y-12 lg:gap-y-0 items-start">
                 <div class="lg:col-span-5 lg:sticky lg:top-8">
                     <div class="text-center mb-10">
@@ -480,6 +506,41 @@
         </div>
     </section>
 
+    <!-- NEW: MEET YOUR ARTIST -->
+    <section id="artist" class="py-24 bg-white border-y border-[#E8B4BC]/30">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-5">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl luxury-shadow">
+                        <img src="images/Miracle.png" alt="Miracle" class="w-full h-full object-cover">
+                        <!-- Replace with your actual photo: just drop your selfie or studio photo named "artist.jpg" into the images folder -->
+                    </div>
+                </div>
+                <div class="md:col-span-7">
+                    <div class="inline px-5 py-1.5 bg-[#E8B4BC]/10 text-[#C77D8A] text-xs tracking-[2.2px] font-semibold rounded-full">MEET YOUR ARTIST</div>
+                    <h2 class="text-5xl md:text-6xl heading-serif tracking-tighter text-[#5C2E3D] mt-4">Hi, I’m Miracle</h2>
+                    <p class="mt-6 text-[#6B5559] text-lg leading-relaxed max-w-xl">
+                        I’m a solo nail artist in McKinney, Texas. 
+                        I use only premium Beetles &amp; Jodsone polishes and take my time so you leave with nails that feel as beautiful as they look.
+                    </p>
+                    <div class="mt-8 flex items-center gap-x-8">
+                        <div class="flex items-center gap-x-2 text-sm">
+                            <i class="fa-solid fa-heart text-[#C77D8A]"></i>
+                            <span class="font-medium">Every set is done by me</span>
+                        </div>
+                        <div class="flex items-center gap-x-2 text-sm">
+                            <i class="fa-solid fa-spa text-[#C77D8A]"></i>
+                            <span class="font-medium">Over 2 years perfecting the craft</span>
+                        </div>
+                    </div>
+                    <a href="#studio" onclick="document.getElementById('studio').scrollIntoView({ behavior: 'smooth' })" class="mt-10 inline-flex items-center gap-x-3 px-8 py-4 bg-[#5C2E3D] hover:bg-black text-white font-semibold rounded-3xl transition-all">
+                        Design your set with me <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- TESTIMONIALS -->
     <section id="stories" class="bg-[#5C2E3D] py-24 text-white">
         <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
@@ -499,6 +560,58 @@
             </div>
             
             <div class="flex justify-center gap-x-2 mt-10" id="testimonial-dots"></div>
+        </div>
+    </section>
+
+    <!-- NEW: FAQ -->
+    <section class="max-w-screen-2xl mx-auto px-6 md:px-8 py-20 bg-[#FDF6F0]">
+        <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="inline px-5 py-1.5 bg-[#E8B4BC]/10 text-[#C77D8A] text-xs tracking-[2.2px] font-semibold rounded-full">COMMON QUESTIONS</div>
+                <h2 class="text-5xl heading-serif tracking-tighter text-[#5C2E3D] mt-4">Everything you need to know</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <div onclick="toggleFaq(this)" class="faq-item border border-[#E8B4BC]/40 rounded-3xl p-6 cursor-pointer bg-white">
+                    <div class="flex justify-between items-center">
+                        <div class="font-semibold text-lg">How long does a full set take?</div>
+                        <i class="fa-solid fa-chevron-down transition-transform"></i>
+                    </div>
+                    <div class="faq-answer text-[#6B5559] mt-4">On average, a Signature Acrylic Set takes about 2 hours. This includes consultation, prep, application, and the final reveal.</div>
+                </div>
+                
+                <div onclick="toggleFaq(this)" class="faq-item border border-[#E8B4BC]/40 rounded-3xl p-6 cursor-pointer bg-white">
+                    <div class="flex justify-between items-center">
+                        <div class="font-semibold text-lg">Do I need to book in advance?</div>
+                        <i class="fa-solid fa-chevron-down transition-transform"></i>
+                    </div>
+                    <div class="faq-answer text-[#6B5559] mt-4">Yes — I only take a few clients per week to keep the experience personal and unhurried. Same-day bookings are very rare.</div>
+                </div>
+                
+                <div onclick="toggleFaq(this)" class="faq-item border border-[#E8B4BC]/40 rounded-3xl p-6 cursor-pointer bg-white">
+                    <div class="flex justify-between items-center">
+                        <div class="font-semibold text-lg">What is the deposit for?</div>
+                        <i class="fa-solid fa-chevron-down transition-transform"></i>
+                    </div>
+                    <div class="faq-answer text-[#6B5559] mt-4">The $25 deposit holds your spot and is applied toward your service total. It’s fully refundable with 48 hours notice.</div>
+                </div>
+                
+                <div onclick="toggleFaq(this)" class="faq-item border border-[#E8B4BC]/40 rounded-3xl p-6 cursor-pointer bg-white">
+                    <div class="flex justify-between items-center">
+                        <div class="font-semibold text-lg">Can I bring a friend?</div>
+                        <i class="fa-solid fa-chevron-down transition-transform"></i>
+                    </div>
+                    <div class="faq-answer text-[#6B5559] mt-4">Because I’m a solo artist, I only book one client at a time. This ensures you get my full attention and the calm experience you deserve.</div>
+                </div>
+                
+                <div onclick="toggleFaq(this)" class="faq-item border border-[#E8B4BC]/40 rounded-3xl p-6 cursor-pointer bg-white">
+                    <div class="flex justify-between items-center">
+                        <div class="font-semibold text-lg">What if I need to cancel?</div>
+                        <i class="fa-solid fa-chevron-down transition-transform"></i>
+                    </div>
+                    <div class="faq-answer text-[#6B5559] mt-4">Free cancellation up to 48 hours before your appointment. Just reply to your confirmation email or message me on Instagram.</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -553,9 +666,10 @@
                 <div class="grid grid-cols-2 gap-y-3 text-sm">
                     <a href="#studio" class="hover:text-white transition">Design Studio</a>
                     <a href="#experience" class="hover:text-white transition">The Experience</a>
+                    <a href="#artist" class="hover:text-white transition">Meet Miracle</a>
+                    <a href="#stories" class="hover:text-white transition">Stories</a>
                     <a href="#" class="hover:text-white transition">Gift Cards</a>
                     <a href="#" class="hover:text-white transition">Nail Care Guide</a>
-                    <a href="#" class="hover:text-white transition">Press</a>
                 </div>
                 
                 <div class="mt-12 pt-6 border-t border-white/20 text-xs flex items-center gap-x-4">
@@ -583,7 +697,7 @@
                     <div id="cart-subtotal" class="font-semibold">$194</div>
                 </div>
                 <div class="flex justify-between text-xs text-[#8B6F73]">
-                    <div>Appointment deposit (applied at checkout)</div>
+                    <div>$25 deposit (applied to your total at appointment)</div>
                     <div>$25</div>
                 </div>
                 
@@ -775,6 +889,7 @@
             <div class="flex flex-col gap-y-6 text-xl">
                 <a href="#studio" onclick="toggleMobileMenu()" class="py-2">Design Studio</a>
                 <a href="#experience" onclick="toggleMobileMenu()" class="py-2">The Experience</a>
+                <a href="#artist" onclick="toggleMobileMenu()" class="py-2">Meet Sean</a>
                 <a href="#stories" onclick="toggleMobileMenu()" class="py-2">Stories</a>
                 <div class="pt-12">
                     <button onclick="showBookingModal(); toggleMobileMenu()" class="w-full py-5 bg-[#5C2E3D] text-white rounded-3xl font-semibold">Secure Your Time</button>
@@ -782,6 +897,11 @@
             </div>
         </div>
     </div>
+
+    <!-- NEW: Floating mobile book button -->
+    <button onclick="showBookingModal()" class="md:hidden fixed bottom-6 right-6 bg-[#5C2E3D] text-white shadow-2xl shadow-[#5C2E3D]/40 w-14 h-14 rounded-3xl flex items-center justify-center text-2xl z-[999] floating-book">
+        <i class="fa-solid fa-calendar-check"></i>
+    </button>
 
     <script>
         // ==================== EMAILJS CONFIGURATION ====================
@@ -807,20 +927,6 @@
         let testimonialInterval;
         let currentModalBookingStep = 1;
 
-        /**
-         * GEL POLISH COLLECTION
-         * 
-         * HOW TO MARK AN ITEM AS "OUT OF STOCK":
-         * 
-         * OPTION 1 (RECOMMENDED - shows "OUT OF STOCK" overlay + tooltip + disables selection):
-         *    Change `inStock: true` → `inStock: false` on any polish object below.
-         * 
-         * OPTION 2 (by commenting it out):
-         *    Add `//` at the start of the entire object line (e.g. // { brand: ..., inStock: true }).
-         *    The item will be completely removed from both carousels.
-         * 
-         * This makes it super easy to manage stock without breaking the website.
-         */
         const gelPolishes = [
             // Jodsone
             { brand: "Jodsone", code: "B02", name: "Jodsone B02", hex: "#F2C1C8", price: 72, inStock: true },
@@ -855,10 +961,12 @@
             { brand: "Beetles", code: "e302", name: "Beetles e302", hex: "#3D2B1F", price: 75, inStock: true }
         ];
 
+        // UPDATED TESTIMONIALS (added one more)
         const testimonials = [
             { quote: "Usual Acrylics is now my go-to for every important meeting I go to. The Ivory Lace is my signature now. It makes every outfit I wear look expensive.", name: "Elena Voss", title: "Creative Director, Atelier", rating: 5, avatar: "https://i.pravatar.cc/40?img=32" },
             { quote: "I got the Burgundy Rose for my wedding and it photographed beautifully. You made me feel so special the entire appointment.", name: "Sofia Patel", title: "Bride, March 2025", rating: 5, avatar: "https://i.pravatar.cc/40?img=47" },
-            { quote: "I’ve been coming here for two years. The attention to detail and the warm, flower-filled studio makes it my favorite self-care experience.", name: "Amara Kline", title: "Interior Designer", rating: 5, avatar: "https://i.pravatar.cc/40?img=28" }
+            { quote: "I’ve been coming here for two years. The attention to detail and the warm, flower-filled studio makes it my favorite self-care experience.", name: "Amara Kline", title: "Interior Designer", rating: 5, avatar: "https://i.pravatar.cc/40?img=28" },
+            { quote: "Sean is an absolute artist. My nails looked like they belonged on a magazine cover. I’ve never felt more confident leaving a salon.", name: "Mia Rodriguez", title: "Marketing Manager", rating: 5, avatar: "https://i.pravatar.cc/40?img=64" }
         ];
 
         // ==================== UTILITY FUNCTIONS ====================
@@ -941,7 +1049,6 @@
             animate();
         }
 
-        // Render gel polish carousels with OUT OF STOCK support
         function renderGelPolishes() {
             const jodsoneContainer = document.getElementById('jodsone-carousel');
             const beetlesContainer = document.getElementById('beetles-carousel');
@@ -975,7 +1082,6 @@
                     swatch.appendChild(glitterLabel);
                 }
                 
-                // Tooltip
                 const tooltip = document.createElement('div');
                 tooltip.className = `absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1 bg-[#5C2E3D] text-white text-xs rounded-2xl opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap z-20 shadow`;
                 let tooltipText = `${polish.name} • $${polish.price}`;
@@ -985,7 +1091,6 @@
                 tooltip.innerHTML = tooltipText;
                 swatch.appendChild(tooltip);
                 
-                // Out of stock overlay
                 if (!isInStock) {
                     const overlay = document.createElement('div');
                     overlay.className = 'absolute inset-0 bg-black/55 flex items-center justify-center rounded-3xl z-10 pointer-events-none';
@@ -1007,11 +1112,8 @@
             });
         }
 
-        // Gel polish selection - now skips out-of-stock items
         function selectGelPolish(polish, element) {
-            if (polish.inStock === false) {
-                return; // prevent any interaction
-            }
+            if (polish.inStock === false) return;
             
             const preview = document.getElementById('nail-preview');
             const nameEl = document.getElementById('preview-name');
@@ -1141,7 +1243,6 @@
             }
         }
 
-        // Cart functions (unchanged - out-of-stock items simply can't be added)
         function updateCartCount() {
             const countEl = document.getElementById('cart-count');
             countEl.textContent = cart.length;
@@ -1515,6 +1616,13 @@
             modal.classList.add('hidden');
         }
 
+        // NEW: FAQ toggle
+        function toggleFaq(el) {
+            el.classList.toggle('open');
+            const icon = el.querySelector('i');
+            icon.style.transform = el.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0)';
+        }
+
         // Main initialization
         function initializeWebsite() {
             initTailwind();
@@ -1530,10 +1638,9 @@
             
             renderGelPolishes();
             
-            // Default preview (only uses in-stock items)
+            // Default preview
             setTimeout(() => {
                 const preview = document.getElementById('nail-preview');
-                // Find first in-stock polish
                 const firstInStock = gelPolishes.find(p => p.inStock !== false) || gelPolishes[0];
                 preview.style.background = firstInStock.hex;
                 document.getElementById('preview-name').innerHTML = firstInStock.name;
@@ -1553,10 +1660,30 @@
             if (lengthSlider) lengthSlider.addEventListener('input', updateLength);
             setTimeout(() => updateLength(), 150);
             
-            console.log('%c✅ Usual Acrylics website FIXED for mobile! Desktop layout unchanged. Nav, hero, nail preview, and studio section now perfect on iPhone.', 'color:#C77D8A; font-weight:600; font-size:13px');
+            console.log('%c✅ Usual Acrylics website FULLY UPGRADED! ✨ Meet Sean + FAQ + floating button added.', 'color:#C77D8A; font-weight:600; font-size:13px');
         }
 
         window.onload = initializeWebsite;
+    </script>
+
+    <!-- JSON-LD for better Google results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Usual Acrylics",
+      "description": "Solo nail artist offering premium gel manicures in McKinney, TX",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1701 N Church St.",
+        "addressLocality": "McKinney",
+        "addressRegion": "TX",
+        "postalCode": "75069"
+      },
+      "url": "https://lucky-kleicha-27dcd3.netlify.app",
+      "telephone": "",
+      "image": "https://lucky-kleicha-27dcd3.netlify.app/images/Miracle.png"
+    }
     </script>
 </body>
 </html>
