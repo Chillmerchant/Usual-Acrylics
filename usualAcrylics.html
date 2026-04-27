@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Usual Acrylics — Solo nail artist in McKinney offering premium gel polishes from Beetles and Jodsone. Flawless acrylics, beautiful shades, and an unforgettable experience.">
+    <title>Usual Acrylics • Solo Nail Artist • McKinney, TX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@300;400;500;600&amp;display=swap');
+        
+        :root { 
+            --burgundy: #5C2E3D; 
+            --rose: #C77D8A; 
+            --blush: #E8A0B0; 
+            --cream: #FDF6F0; 
+            --gold: #D4AF37; 
+        }
+        
+        body { 
+            font-family: 'Inter', system_ui, sans-serif; 
+        }
+        .heading-serif { 
+            font-family: 'Playfair Display', Georgia, serif; 
+            font-weight: 700; 
+            letter-spacing: -0.025em; 
+            line-height: 1.05; 
+        }
+        
+        .luxury-shadow { 
+            box-shadow: 0 25px 60px -15px rgb(92 46 61 / 0.25), 0 10px 20px -5px rgb(92 46 61 / 0.1); 
+        }
+        .floral-bg { 
+            background-color: #FDF6F0; 
+            background-image: radial-gradient(circle at 20% 30%, rgba(232, 180, 188, 0.08) 1px, transparent 2px), 
+                              radial-gradient(circle at 75% 65%, rgba(199, 125, 138, 0.06) 1px, transparent 2px); 
+            background-size: 80px 80px, 120px 120px; 
+        }
+        
+        .nail { 
+            width: 72px; 
+            height: 136px; 
+            border-radius: 55% 55% 18% 18%; 
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18), inset 0 18px 28px rgba(255,255,255,0.55), inset 0 -12px 18px rgba(0,0,0,0.15); 
+            position: relative; 
+            overflow: hidden; 
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1); 
+            cursor: pointer; 
+        }
+        .nail:hover { 
+            transform: translateY(-10px) scale(1.04); 
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.22), inset 0 18px 28px rgba(255,255,255,0.6), inset 0 -12px 18px rgba(0,0,0,0.18); 
+        }
+        .nail::before { 
+            content: ''; 
+            position: absolute; 
+            top: 14px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            width: 46px; 
+            height: 9px; 
+            background: linear-gradient(90deg, rgba(255,255,255,0.45), rgba(255,255,255,0.25)); 
+            border-radius: 9999px; 
+        }
+        .nail::after { 
+            content: ''; 
+            position: absolute; 
+            bottom: 20px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            width: 32px; 
+            height: 4px; 
+            background: rgba(255,255,255,0.3); 
+            border-radius: 9999px; 
+        }
+        
+        .premium-glass { 
+            background: rgba(253, 246, 240, 0.92); 
+            backdrop-filter: blur(20px); 
+            border: 1px solid rgba(232, 180, 188, 0.3); 
+        }
+        .nav-scrolled { 
+            box-shadow: 0 10px 30px -10px rgb(92 46 61 / 0.15); 
+            background: rgba(255,255,255,0.98); 
+        }
+        
+        .magnetic-btn { 
+            position: relative; 
+            overflow: hidden; 
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1); 
+        }
+        .magnetic-btn::after { 
+            content: ''; 
+            position: absolute; 
+            top: -50%; 
+            left: -50%; 
+            width: 200%; 
+            height: 200%; 
+            background: radial-gradient(circle, rgba(255,255,255,0.35) 0%, transparent 70%); 
+            opacity: 0; 
+            transition: opacity 0.4s ease; 
+            transform: translate(-50%, -50%); 
+            pointer-events: none; 
+        }
+        .magnetic-btn:hover::after { 
+            opacity: 1; 
+        }
+        
+        .nail-preview { 
+            width: 110px; 
+            height: 205px; 
+            border-radius: 58% 58% 20% 20%; 
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22), inset 0 22px 32px rgba(255,255,255,0.6), inset 0 -14px 22px rgba(0,0,0,0.18); 
+            position: relative; 
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); 
+            overflow: hidden; 
+        }
+        .nail-preview::before { 
+            content: ''; 
+            position: absolute; 
+            top: 18px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            width: 62px; 
+            height: 12px; 
+            background: linear-gradient(90deg, rgba(255,255,255,0.5), rgba(255,255,255,0.3)); 
+            border-radius: 9999px; 
+        }
+        
+        .glitter { 
+            position: absolute; 
+            width: 4px; 
+            height: 4px; 
+            background: white; 
+            border-radius: 50%; 
+            box-shadow: 0 0 6px #fff, 0 0 12px #D4AF37; 
+            animation: glitter-fall 1.2s ease-out forwards; 
+            pointer-events: none; 
+        }
+        @keyframes glitter-fall { 
+            0% { transform: scale(0.6) translateY(0); opacity: 1; } 
+            100% { transform: scale(0.2) translateY(40px); opacity: 0; } 
+        }
+        
+        .scroll-progress { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            height: 3px; 
+            background: linear-gradient(to right, #C77D8A, #D4AF37); 
+            z-index: 9999; 
+            transition: width 0.1s ease-out; 
+        }
+        
+        .reveal { 
+            opacity: 0; 
+            transform: translateY(40px); 
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1); 
+        }
+        .reveal.visible { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+        
+        .carousel-slide { 
+            transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1); 
+        }
+        
+        .scrollbar-hide::-webkit-scrollbar { 
+            display: none; 
+        }
+        .scrollbar-hide { 
+            -ms-overflow-style: none; 
+            scrollbar-width: none; 
+        }
+        
+        /* Improved mobile menu & spacing */
+        #mobile-menu { 
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1); 
+        }
+        
+        /* Better touch targets & spacing */
+        .swatch { 
+            width: 52px; 
+            height: 52px; 
+            transition: all 0.2s ease; 
+        }
+        
+        /* Refined hero text scaling */
+        .hero-title {
+            font-size: 52px;
+            line-height: 1.02;
+        }
+        @media (min-width: 640px) {
+            .hero-title {
+                font-size: 64px;
+            }
+        }
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 76px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .hero-title {
+                font-size: 88px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#FDF6F0] text-[#3D2B2E] floral-bg overflow-x-hidden">
+    <!-- Scroll Progress -->
+    <div id="scroll-progress" class="scroll-progress" style="width: 0%"></div>
+
+    <!-- NAV -->
+    <nav id="nav" class="bg-white/95 backdrop-blur-xl border-b border-[#E8B4BC]/40 sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="px-6 md:px-8 py-5 md:py-6 flex items-center justify-between">
+                <div class="flex items-center gap-x-3.5">
+                    <div class="w-12 h-12 bg-gradient-to-br from-[#5C2E3D] to-[#3D2B2E] rounded-2xl flex items-center justify-center shadow-inner ring-1 ring-white/30">
+                        <span class="text-white text-4xl drop-shadow-sm">💅</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-[29px] tracking-[-1.5px] heading-serif text-[#5C2E3D]">Usual</span>
+                        <span class="font-semibold text-[29px] tracking-[-1.5px] text-[#C77D8A] -mt-2">Acrylics</span>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium tracking-[-0.2px]">
+                    <a href="#studio" class="hover:text-[#C77D8A] transition-colors px-3 py-1">Design Studio</a>
+                    <a href="#experience" class="hover:text-[#C77D8A] transition-colors px-3 py-1">The Experience</a>
+                    <a href="#stories" class="hover:text-[#C77D8A] transition-colors px-3 py-1">Stories</a>
+                </div>
+
+                <div class="flex items-center gap-x-4">
+                    <div onclick="showCart()" class="group relative flex items-center justify-center w-11 h-11 hover:bg-[#FDF6F0] rounded-2xl transition-all cursor-pointer border border-transparent hover:border-[#E8B4BC]/50">
+                        <i class="fa-solid fa-shopping-bag text-xl text-[#5C2E3D] group-hover:scale-110 transition-transform"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-[#C77D8A] text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">0</span>
+                    </div>
+                    
+                    <button onclick="showBookingModal()" class="magnetic-btn group px-8 py-[15px] bg-[#5C2E3D] hover:bg-[#3D2B2E] transition-all text-white text-sm font-semibold rounded-3xl flex items-center gap-x-2.5 shadow-lg shadow-[#5C2E3D]/40 active:scale-[0.985]">
+                        <span>Secure Your Time</span>
+                        <i class="fa-solid fa-calendar-check text-xs group-hover:translate-x-0.5 transition"></i>
+                    </button>
+
+                    <button id="mobile-menu-btn" class="md:hidden w-11 h-11 flex items-center justify-center text-[#5C2E3D]" onclick="toggleMobileMenu()">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="relative min-h-screen flex items-center pt-4 overflow-hidden">
+        <canvas id="hero-canvas" class="absolute inset-0 z-0 opacity-70"></canvas>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#FDF6F0]/40 via-transparent to-transparent z-10"></div>
+
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-8 relative z-20">
+            <div class="max-w-[620px]">
+                <h1 class="hero-title font-bold tracking-[-3.2px] heading-serif text-[#5C2E3D]">
+                    Beauty is<br>in your<br><span class="bg-gradient-to-r from-[#C77D8A] via-[#D4AF37] to-[#C77D8A] bg-clip-text text-transparent">hands.</span>
+                </h1>
+                
+                <p class="mt-8 max-w-[440px] text-[17px] md:text-[17.5px] leading-relaxed text-[#6B5559]">
+                    I'm a solo nail artist based in McKinney. I use premium gel polishes like Beetles and Jodsone. All my sets are done with great care so your manicure can be a special experience.
+                </p>
+                
+                <div class="mt-12 flex flex-wrap items-center gap-x-4 gap-y-4">
+                    <button onclick="document.getElementById('studio').scrollIntoView({ behavior: 'smooth' })" class="magnetic-btn group px-9 py-4 bg-white border border-[#E8B4BC] hover:border-[#C77D8A] hover:bg-[#FDF6F0] transition-all text-[#5C2E3D] font-semibold rounded-3xl flex items-center gap-x-3 shadow-sm text-sm active:scale-[0.985]">
+                        <span>Explore the Studio</span>
+                        <i class="fa-solid fa-palette text-[#C77D8A]"></i>
+                    </button>
+                    
+                    <button onclick="document.getElementById('book').scrollIntoView({ behavior: 'smooth' })" class="magnetic-btn group px-9 py-4 bg-[#5C2E3D] hover:bg-black transition-all text-white font-semibold rounded-3xl flex items-center gap-x-3 text-sm shadow-lg shadow-[#5C2E3D]/30 active:scale-[0.985]">
+                        <span>Reserve Your Chair</span>
+                    </button>
+                </div>
+                
+                <div class="mt-16 flex items-center gap-x-8">
+                    <div class="flex -space-x-4">
+                        <div class="w-9 h-9 bg-white ring-[2.5px] ring-[#FDF6F0] rounded-full overflow-hidden ring-offset-2 ring-offset-[#FDF6F0]"><img src="https://i.pravatar.cc/36?img=28" class="object-cover" alt=""></div>
+                        <div class="w-9 h-9 bg-white ring-[2.5px] ring-[#FDF6F0] rounded-full overflow-hidden ring-offset-2 ring-offset-[#FDF6F0]"><img src="https://i.pravatar.cc/36?img=40" class="object-cover" alt=""></div>
+                        <div class="w-9 h-9 bg-white ring-[2.5px] ring-[#FDF6F0] rounded-full overflow-hidden ring-offset-2 ring-offset-[#FDF6F0]"><img src="https://i.pravatar.cc/36?img=47" class="object-cover" alt=""></div>
+                        <div class="w-9 h-9 bg-white ring-[2.5px] ring-[#FDF6F0] rounded-full overflow-hidden ring-offset-2 ring-offset-[#FDF6F0]"><img src="https://i.pravatar.cc/36?img=32" class="object-cover" alt=""></div>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-sm">Joined by <span class="text-[#C77D8A]">100</span> women this year</div>
+                        <div class="text-xs text-[#8B6F73]">Average rating: 4.98 / 5</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- TRUST BAR -->
+    <div class="border-b border-[#E8B4BC]/40 py-6 bg-white/60">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
+            <div class="flex justify-center items-center opacity-75">
+                <div class="text-xs text-[#8B6F73]">McKinney Job Corp's highest-rated nail studio • 2025–2026</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DESIGN STUDIO -->
+    <section id="studio" class="bg-white py-20 border-y border-[#E8B4BC]/30">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
+            <div class="grid lg:grid-cols-12 gap-x-12 items-start">
+                <div class="lg:col-span-5 lg:sticky lg:top-8">
+                    <div class="text-center mb-10">
+                        <div class="inline text-xs tracking-[2.2px] bg-[#5C2E3D] text-white px-5 py-1.5 rounded-full font-semibold">DESIGN STUDIO</div>
+                        <h3 class="text-5xl heading-serif tracking-tighter mt-4 text-[#5C2E3D]">Create your signature look</h3>
+                        <p class="text-[#6B5559] mt-3 max-w-xs mx-auto">Live shade preview. Premium selections from Beetles &amp; Jodsone.</p>
+                    </div>
+                    
+                    <div class="flex justify-center mb-8 relative">
+                        <div id="nail-preview" class="nail-preview shadow-2xl mx-auto" style="background: linear-gradient(155deg, #C77D8A, #E8A0B0);">
+                            <div id="glitter-container" class="absolute inset-0 pointer-events-none"></div>
+                        </div>
+                        <div class="absolute -top-4 -right-6 text-4xl opacity-30">✨</div>
+                        <div class="absolute -bottom-5 -left-7 text-3xl opacity-25">🌸</div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div id="preview-name" class="font-semibold text-2xl">Rose Petal</div>
+                        <div id="preview-price" class="text-[#8B6F73]">Starting at $75 • Full set</div>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-7 mt-12 lg:mt-0">
+                    <div class="premium-glass rounded-3xl p-8 lg:p-10 border border-[#E8B4BC]/50 luxury-shadow">
+                        <div class="mb-9">
+                            <div class="flex justify-between items-end mb-4">
+                                <div>
+                                    <div class="uppercase tracking-[1.8px] text-xs font-semibold text-[#C77D8A]">GEL POLISH COLLECTION</div>
+                                    <div class="text-lg font-semibold mb-4">Beetles &amp; Jodsone • Authentic Shades</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Jodsone Carousel -->
+                            <div class="mb-8">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="font-semibold text-sm flex items-center gap-x-2">
+                                        <span class="text-[#C77D8A]">Jodsone</span>
+                                    </div>
+                                    <div class="flex gap-x-1">
+                                        <button onclick="scrollCarousel('jodsone', -1)" class="w-8 h-8 flex items-center justify-center border border-[#E8B4BC]/60 hover:bg-[#FDF6F0] rounded-xl text-xs transition">←</button>
+                                        <button onclick="scrollCarousel('jodsone', 1)" class="w-8 h-8 flex items-center justify-center border border-[#E8B4BC]/60 hover:bg-[#FDF6F0] rounded-xl text-xs transition">→</button>
+                                    </div>
+                                </div>
+                                <div id="jodsone-carousel" class="flex gap-3 overflow-x-auto snap-x pb-1 px-1 scroll-pl-8 scroll-pr-8 pt-1 scrollbar-hide"></div>
+                            </div>
+                            
+                            <!-- Beetles Carousel -->
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="font-semibold text-sm flex items-center gap-x-2">
+                                        <span class="text-[#C77D8A]">Beetles</span>
+                                    </div>
+                                    <div class="flex gap-x-1">
+                                        <button onclick="scrollCarousel('beetles', -1)" class="w-8 h-8 flex items-center justify-center border border-[#E8B4BC]/60 hover:bg-[#FDF6F0] rounded-xl text-xs transition">←</button>
+                                        <button onclick="scrollCarousel('beetles', 1)" class="w-8 h-8 flex items-center justify-center border border-[#E8B4BC]/60 hover:bg-[#FDF6F0] rounded-xl text-xs transition">→</button>
+                                    </div>
+                                </div>
+                                <div id="beetles-carousel" class="flex gap-3 overflow-x-auto snap-x pb-1 px-1 scroll-pl-8 scroll-pr-8 pt-1 scrollbar-hide"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-9">
+                            <div>
+                                <div class="uppercase tracking-[1.8px] text-xs font-semibold text-[#C77D8A] mb-3">NAIL SHAPE</div>
+                                <div class="flex flex-wrap gap-3">
+                                    <div onclick="selectShape(this, 'almond')" class="shape-btn active px-6 py-3 text-sm border border-[#C77D8A] bg-[#FDF6F0] rounded-3xl cursor-pointer font-medium">Almond</div>
+                                    <div onclick="selectShape(this, 'square')" class="shape-btn px-6 py-3 text-sm border border-[#E8B4BC]/60 hover:border-[#C77D8A] rounded-3xl cursor-pointer">Square</div>
+                                    <div onclick="selectShape(this, 'coffin')" class="shape-btn px-6 py-3 text-sm border border-[#E8B4BC]/60 hover:border-[#C77D8A] rounded-3xl cursor-pointer">Coffin</div>
+                                    <div onclick="selectShape(this, 'stiletto')" class="shape-btn px-6 py-3 text-sm border border-[#E8B4BC]/60 hover:border-[#C77D8A] rounded-3xl cursor-pointer">Stiletto</div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="uppercase tracking-[1.8px] text-xs font-semibold text-[#C77D8A] mb-3">LENGTH</div>
+                                <input type="range" id="length-slider" min="1" max="5" step="1" value="3" class="w-full accent-[#C77D8A] cursor-pointer" oninput="updateLength()">
+                                <div class="flex justify-between text-xs text-[#8B6F73] mt-1">
+                                    <div>Short</div>
+                                    <div>Medium</div>
+                                    <div>Long</div>
+                                    <div>Extra</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10 pt-8 border-t border-[#E8B4BC]/40">
+                            <button onclick="addCustomToCart()" class="w-full py-[17px] bg-[#5C2E3D] text-white font-semibold rounded-3xl flex items-center justify-center gap-x-3 hover:bg-black transition-colors text-sm active:scale-[0.985]">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <span>ADD TO CART — <span id="dynamic-price">$78</span></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE EXPERIENCE -->
+    <section id="experience" class="max-w-screen-2xl mx-auto px-6 md:px-8 py-24">
+        <div class="text-center mb-16">
+            <div class="inline px-5 py-1.5 bg-[#E8B4BC]/10 text-[#C77D8A] text-xs tracking-[2.2px] font-semibold rounded-full mb-4">THE USUAL EXPERIENCE</div>
+            <h2 class="text-5xl md:text-6xl heading-serif tracking-tighter text-[#5C2E3D]">More than a manicure.<br>A moment.</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="reveal bg-white border border-[#E8B4BC]/40 rounded-3xl p-10 luxury-shadow group">
+                <div class="w-14 h-14 bg-[#E8B4BC]/20 rounded-2xl flex items-center justify-center mb-7 group-hover:bg-[#C77D8A]/20 transition-colors">
+                    <i class="fa-solid fa-spa text-[#C77D8A] text-3xl"></i>
+                </div>
+                <div class="font-semibold text-2xl">The Arrival</div>
+                <div class="mt-4 text-[#6B5559]">Please arrive 10 minutes early to settle in comfortably. If you arrive 10 minutes late, a $15 late fee applies. If you are 20 minutes late, the appointment will be cancelled.</div>
+                <div class="mt-8 text-xs uppercase tracking-widest text-[#C77D8A]">10 minutes before your service</div>
+            </div>
+            
+            <div class="reveal bg-white border border-[#E8B4BC]/40 rounded-3xl p-10 luxury-shadow group">
+                <div class="w-14 h-14 bg-[#E8B4BC]/20 rounded-2xl flex items-center justify-center mb-7 group-hover:bg-[#C77D8A]/20 transition-colors">
+                    <i class="fa-solid fa-palette text-[#C77D8A] text-3xl"></i>
+                </div>
+                <div class="font-semibold text-2xl">The Application</div>
+                <div class="mt-4 text-[#6B5559]">Your selected premium gel polish from Beetles or Jodsone is expertly applied for a flawless, durable finish. The entire focus is on creating the perfect set — nothing more, nothing less.</div>
+                <div class="mt-8 text-xs uppercase tracking-widest text-[#C77D8A]">The process takes two hours to complete on average</div>
+            </div>
+            
+            <div class="reveal bg-white border border-[#E8B4BC]/40 rounded-3xl p-10 luxury-shadow group">
+                <div class="w-14 h-14 bg-[#E8B4BC]/20 rounded-2xl flex items-center justify-center mb-7 group-hover:bg-[#C77D8A]/20 transition-colors">
+                    <i class="fa-solid fa-heart text-[#C77D8A] text-3xl"></i>
+                </div>
+                <div class="font-semibold text-2xl">The Reveal</div>
+                <div class="mt-4 text-[#6B5559]">Once your nails are complete, take a moment to admire the finished look. Quick aftercare tips are shared so your set stays beautiful for weeks to come.</div>
+                <div class="mt-8 text-xs uppercase tracking-widest text-[#C77D8A]">Walk out with confidence</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="stories" class="bg-[#5C2E3D] py-24 text-white">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <div class="text-[#E8B4BC] text-xs tracking-[2.2px]">REAL WOMEN. REAL STORIES.</div>
+                    <h2 class="text-white text-5xl md:text-6xl heading-serif tracking-tighter">What our clients say</h2>
+                </div>
+                <div class="hidden md:flex gap-x-2">
+                    <button onclick="prevTestimonial()" class="w-11 h-11 flex items-center justify-center border border-white/30 hover:bg-white/10 rounded-2xl transition-colors"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button onclick="nextTestimonial()" class="w-11 h-11 flex items-center justify-center border border-white/30 hover:bg-white/10 rounded-2xl transition-colors"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+            
+            <div id="testimonial-carousel" class="overflow-hidden">
+                <div id="testimonial-track" class="flex transition-transform duration-500 ease-out" style="transform: translateX(0)"></div>
+            </div>
+            
+            <div class="flex justify-center gap-x-2 mt-10" id="testimonial-dots"></div>
+        </div>
+    </section>
+
+    <!-- BOOKING CTA -->
+    <section id="book" class="max-w-screen-2xl mx-auto px-6 md:px-8 py-24">
+        <div class="max-w-2xl mx-auto text-center">
+            <div class="inline px-5 py-1.5 bg-[#E8B4BC]/10 text-[#C77D8A] text-xs tracking-[2.2px] font-semibold rounded-full mb-4">SECURE YOUR TIME</div>
+            <h2 class="text-5xl md:text-6xl heading-serif tracking-tighter text-[#5C2E3D]">Ready to book your appointment?</h2>
+            <p class="mt-6 max-w-md mx-auto text-[#6B5559]">Click the button below or use the “Secure Your Time” button in the navigation to choose your service, date, and confirm via Cash App.</p>
+            
+            <button onclick="showBookingModal()" class="mt-10 magnetic-btn group px-10 py-5 bg-[#5C2E3D] hover:bg-black transition-all text-white font-semibold rounded-3xl flex items-center gap-x-3 mx-auto text-base shadow-lg shadow-[#5C2E3D]/30 active:scale-[0.985]">
+                <span>Open Booking Form</span>
+                <i class="fa-solid fa-calendar-check group-hover:rotate-12 transition"></i>
+            </button>
+            
+            <div class="mt-8 text-xs text-[#8B6F73]">Appointments confirmed within 2 hours • 48-hour free cancellation</div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#3D2B2E] text-[#E8B4BC]/90 pt-20 pb-12">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-8 grid md:grid-cols-12 gap-y-12">
+            <div class="md:col-span-5">
+                <div class="flex items-center gap-x-3 mb-6">
+                    <div class="w-9 h-9 bg-[#E8B4BC] rounded-2xl flex items-center justify-center">
+                        <span class="text-[#3D2B2E] text-2xl">💅</span>
+                    </div>
+                    <span class="font-bold text-3xl text-white tracking-tighter heading-serif">Usual Acrylics</span>
+                </div>
+                <div class="max-w-xs text-sm leading-relaxed">Small nail studio, big on intention. From the flowers on the wall to the polish on your hands, everything is chosen with care.</div>
+                
+                <div class="mt-10 flex gap-x-5 text-2xl">
+                    <a href="https://www.instagram.com/usualacrylicss?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-pinterest"></i></a>
+                </div>
+            </div>
+            
+            <div class="md:col-span-3 text-sm">
+                <div class="font-semibold text-white mb-5 tracking-wider text-xs">STUDIO</div>
+                <div class="space-y-3">
+                    <div>1701 N Church St.</div>
+                    <div>McKinney, TX 75069</div>
+                    <div class="pt-2">Mon–Thu 5pm–9pm</div>
+                    <div>Wed 5pm-7pm</div>
+                    <div>Fri-Sun 10am–11pm</div>
+                </div>
+            </div>
+            
+            <div class="md:col-span-4">
+                <div class="font-semibold text-white mb-5 tracking-wider text-xs">QUICK LINKS</div>
+                <div class="grid grid-cols-2 gap-y-3 text-sm">
+                    <a href="#studio" class="hover:text-white transition">Design Studio</a>
+                    <a href="#experience" class="hover:text-white transition">The Experience</a>
+                    <a href="#" class="hover:text-white transition">Gift Cards</a>
+                    <a href="#" class="hover:text-white transition">Nail Care Guide</a>
+                    <a href="#" class="hover:text-white transition">Press</a>
+                </div>
+                
+                <div class="mt-12 pt-6 border-t border-white/20 text-xs flex items-center gap-x-4">
+                    <div>© 2026 Usual Acrylics</div>
+                    <div class="flex-1 h-px bg-white/20"></div>
+                    <div onclick="showPrivacyModal()" class="hover:text-white cursor-pointer transition">Privacy</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" onclick="if (event.target.id === 'cart-modal') hideCart()" class="hidden fixed inset-0 bg-black/70 z-[100] flex items-end md:items-center justify-center">
+        <div onclick="event.stopImmediatePropagation()" class="bg-white w-full md:w-[440px] md:rounded-3xl rounded-t-3xl p-8 max-h-[90vh] overflow-auto">
+            <div class="flex justify-between items-center mb-6">
+                <div class="font-semibold text-2xl">Your Cart</div>
+                <button onclick="hideCart()" class="text-4xl leading-none text-[#8B6F73] hover:text-black">&times;</button>
+            </div>
+            
+            <div id="cart-items" class="space-y-6 max-h-[340px] overflow-auto pr-1"></div>
+            
+            <div id="cart-checkout-section" class="border-t pt-6 mt-6">
+                <div class="flex justify-between text-sm mb-1">
+                    <div>Subtotal</div>
+                    <div id="cart-subtotal" class="font-semibold">$194</div>
+                </div>
+                <div class="flex justify-between text-xs text-[#8B6F73]">
+                    <div>Appointment deposit (applied at checkout)</div>
+                    <div>$25</div>
+                </div>
+                
+                <button id="checkout-btn" onclick="checkout()" class="mt-8 w-full py-[17px] bg-[#5C2E3D] text-white font-semibold rounded-3xl flex items-center justify-center gap-x-3 hover:bg-black transition-colors">
+                    CHECKOUT — <span id="cart-total">$219</span>
+                </button>
+                
+                <div class="text-center text-[10px] mt-4 text-[#8B6F73]">Secure checkout • 48-hour free cancellation</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" onclick="if (event.target.id === 'booking-modal') hideBookingModal()" class="hidden fixed inset-0 bg-black/70 z-[100] flex items-end md:items-center justify-center">
+        <div onclick="event.stopImmediatePropagation()" class="bg-white w-full md:w-[520px] md:rounded-3xl rounded-t-3xl p-8 max-h-[92vh] overflow-auto">
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <div class="text-xs tracking-[2.2px] text-[#C77D8A] font-semibold">SECURE YOUR TIME</div>
+                    <div class="text-3xl font-semibold tracking-tighter">Let’s get you in the chair</div>
+                </div>
+                <button onclick="hideBookingModal()" class="text-4xl leading-none text-[#8B6F73] hover:text-black">&times;</button>
+            </div>
+
+            <div class="flex items-center gap-x-2 mb-8">
+                <div class="flex-1 h-1 bg-[#E8B4BC]/30 rounded-full overflow-hidden">
+                    <div id="modal-booking-progress" class="h-1 bg-[#C77D8A] transition-all" style="width: 33%"></div>
+                </div>
+                <div class="text-xs font-medium text-[#8B6F73]">Step <span id="modal-step-number">1</span> of 3</div>
+            </div>
+            
+            <form id="modal-booking-form">
+                <!-- Step 1 -->
+                <div id="modal-booking-step-1">
+                    <div class="uppercase tracking-widest text-xs font-semibold mb-3 text-[#C77D8A]">CHOOSE YOUR SERVICE</div>
+                    
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-x-4 border border-[#E8B4BC]/50 hover:border-[#C77D8A] transition-colors rounded-3xl p-5 cursor-pointer has-[:checked]:border-[#C77D8A] has-[:checked]:bg-[#FDF6F0]">
+                            <input type="radio" name="service" value="Signature Acrylic Set — $128" checked class="accent-[#C77D8A] scale-110">
+                            <div class="flex-1">
+                                <div class="font-semibold">Signature Acrylic Set</div>
+                                <div class="text-xs text-[#8B6F73]">90 min • Premium gel polish from Beetles &amp; Jodsone</div>
+                            </div>
+                            <div class="font-semibold">$128</div>
+                        </label>
+                        
+                        <label class="flex items-center gap-x-4 border border-[#E8B4BC]/50 hover:border-[#C77D8A] transition-colors rounded-3xl p-5 cursor-pointer has-[:checked]:border-[#C77D8A] has-[:checked]:bg-[#FDF6F0]">
+                            <input type="radio" name="service" value="The Usual Manicure — $78" class="accent-[#C77D8A] scale-110">
+                            <div class="flex-1">
+                                <div class="font-semibold">The Usual Manicure</div>
+                                <div class="text-xs text-[#8B6F73]">60 min • Gel polish + strengthening treatment</div>
+                            </div>
+                            <div class="font-semibold">$78</div>
+                        </label>
+                        
+                        <label class="flex items-center gap-x-4 border border-[#E8B4BC]/50 hover:border-[#C77D8A] transition-colors rounded-3xl p-5 cursor-pointer has-[:checked]:border-[#C77D8A] has-[:checked]:bg-[#FDF6F0]">
+                            <input type="radio" name="service" value="Nail Art &amp; Design — $95+" class="accent-[#C77D8A] scale-110">
+                            <div class="flex-1">
+                                <div class="font-semibold">Nail Art &amp; Design</div>
+                                <div class="text-xs text-[#8B6F73]">75–120 min • Hand-painted florals or custom artwork</div>
+                            </div>
+                            <div class="font-semibold">$95+</div>
+                        </label>
+                    </div>
+                    
+                    <button type="button" onclick="nextBookingModalStep()" class="mt-10 w-full py-4 bg-[#5C2E3D] text-white font-semibold rounded-3xl">Continue to Date &amp; Time</button>
+                </div>
+                
+                <!-- Step 2 -->
+                <div id="modal-booking-step-2" class="hidden">
+                    <div class="uppercase tracking-widest text-xs font-semibold mb-3 text-[#C77D8A]">PICK YOUR DATE &amp; TIME</div>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-xs font-medium mb-1.5">DATE</label>
+                            <input type="date" id="modal-booking-date" value="2026-04-28" class="w-full border border-[#E8B4BC]/60 focus:border-[#C77D8A] px-5 py-4 rounded-3xl text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium mb-1.5">TIME</label>
+                            <select id="modal-booking-time" class="w-full border border-[#E8B4BC]/60 focus:border-[#C77D8A] px-5 py-4 rounded-3xl text-sm bg-white">
+                                <option>10:00 AM</option>
+                                <option>11:30 AM</option>
+                                <option selected>2:00 PM</option>
+                                <option>3:30 PM</option>
+                                <option>5:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <button type="button" onclick="prevBookingModalStep()" class="flex-1 py-4 border border-[#5C2E3D] text-[#5C2E3D] font-semibold rounded-3xl">Back</button>
+                        <button type="button" onclick="nextBookingModalStep()" class="flex-1 py-4 bg-[#5C2E3D] text-white font-semibold rounded-3xl">Continue</button>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div id="modal-booking-step-3" class="hidden">
+                    <div class="uppercase tracking-widest text-xs font-semibold mb-3 text-[#C77D8A]">YOUR DETAILS</div>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-xs font-medium mb-1.5">FULL NAME</label>
+                            <input type="text" id="modal-client-name" value="Isabella Chen" class="w-full border border-[#E8B4BC]/60 focus:border-[#C77D8A] px-5 py-4 rounded-3xl text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium mb-1.5">EMAIL</label>
+                            <input type="email" id="modal-client-email" value="isabella.chen@hey.com" class="w-full border border-[#E8B4BC]/60 focus:border-[#C77D8A] px-5 py-4 rounded-3xl text-sm">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-xs font-medium mb-1.5">ANY NOTES FOR YOUR ARTIST?</label>
+                        <textarea id="modal-client-notes" class="w-full border border-[#E8B4BC]/60 focus:border-[#C77D8A] px-5 py-4 rounded-3xl text-sm h-[110px] resize-y" placeholder="I’d love a subtle gold accent on my ring finger..."></textarea>
+                    </div>
+                    
+                    <div class="flex gap-4 mt-8">
+                        <button type="button" onclick="prevBookingModalStep()" class="flex-1 py-4 border border-[#5C2E3D] text-[#5C2E3D] font-semibold rounded-3xl">Back</button>
+                        <button type="button" onclick="proceedToCashAppPayment()" class="flex-1 py-4 bg-[#5C2E3D] text-white font-semibold rounded-3xl flex items-center justify-center gap-x-2">
+                            CONFIRM &amp; PAY VIA CASH APP <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="text-center mt-6 text-xs text-[#8B6F73]">You’ll receive a confirmation email within minutes. 48-hour cancellation policy.</div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" onclick="if (event.target.id === 'privacy-modal') hidePrivacyModal()" class="hidden fixed inset-0 bg-black/70 z-[100] flex items-end md:items-center justify-center">
+        <div onclick="event.stopImmediatePropagation()" class="bg-white w-full md:w-[560px] md:rounded-3xl rounded-t-3xl p-8 max-h-[85vh] overflow-auto">
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <div class="text-xs tracking-[2.2px] text-[#C77D8A] font-semibold">OUR COMMITMENT TO YOU</div>
+                    <div class="text-3xl font-semibold tracking-tighter">Privacy Policy</div>
+                </div>
+                <button onclick="hidePrivacyModal()" class="text-4xl leading-none text-[#8B6F73] hover:text-black">&times;</button>
+            </div>
+
+            <div class="space-y-6 text-[13.5px] leading-relaxed text-[#3D2B2E]">
+                <p>At Usual Acrylics, your privacy matters. We will collect only what’s necessary to deliver you a beautiful and personalized experience.</p>
+                
+                <div>
+                    <div class="font-semibold text-sm mb-1.5 text-[#5C2E3D]">What We Collect</div>
+                    <ul class="list-disc pl-5 space-y-1 text-sm">
+                        <li>Your name, email, and any notes for sent to me</li>
+                        <li>Appointment date, time, and service preferences</li>
+                        <li>Payment confirmation via Cash App</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <div class="font-semibold text-sm mb-1.5 text-[#5C2E3D]">How We Use Your Information</div>
+                    <p class="text-sm">To confirm your booking, send reminders, and make sure every detail of your visit is perfect. We use EmailJS to deliver confirmations. EmailJS is a trusted, secure service. We do not sell, rent, or share your information with anyone else.</p>
+                </div>
+                
+                <div>
+                    <div class="font-semibold text-sm mb-1.5 text-[#5C2E3D]">Your Rights &amp; Choices</div>
+                    <p class="text-sm">You can request to view, update, or delete your information anytime. Appointments can be cancelled up to 48 hours in advance with no fee. Just reply to your confirmation email or message me on Instagram.</p>
+                </div>
+                
+                <div class="pt-6 border-t border-[#E8B4BC]/30 text-xs text-[#8B6F73]">
+                    Last updated: April 2026 • This policy applies to all visits and bookings at 1701 N Church St, McKinney, TX.
+                </div>
+            </div>
+            
+            <button onclick="hidePrivacyModal()" class="mt-10 w-full py-[17px] bg-[#5C2E3D] hover:bg-black transition-colors text-white font-semibold rounded-3xl text-sm">I UNDERSTAND — CLOSE</button>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="success-toast" class="hidden fixed bottom-8 right-8 bg-[#5C2E3D] text-white px-6 py-4 rounded-3xl shadow-2xl flex items-center gap-x-3 z-[200]">
+        <i class="fa-solid fa-check-circle text-[#E8B4BC]"></i>
+        <div>
+            <div class="font-semibold">Added to cart!</div>
+            <div class="text-xs opacity-80">We can’t wait to see you</div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-black/70 z-[90] md:hidden">
+        <div class="bg-white w-4/5 h-full p-8 ml-auto">
+            <div class="flex justify-between mb-12">
+                <div>
+                    <span class="font-bold text-3xl tracking-tighter heading-serif text-[#5C2E3D]">Usual</span>
+                    <span class="font-semibold text-3xl tracking-tighter text-[#C77D8A]">Acrylics</span>
+                </div>
+                <button onclick="toggleMobileMenu()" class="text-4xl">&times;</button>
+            </div>
+            <div class="flex flex-col gap-y-6 text-xl">
+                <a href="#studio" onclick="toggleMobileMenu()" class="py-2">Design Studio</a>
+                <a href="#experience" onclick="toggleMobileMenu()" class="py-2">The Experience</a>
+                <a href="#stories" onclick="toggleMobileMenu()" class="py-2">Stories</a>
+                <div class="pt-12">
+                    <button onclick="showBookingModal(); toggleMobileMenu()" class="w-full py-5 bg-[#5C2E3D] text-white rounded-3xl font-semibold">Secure Your Time</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==================== EMAILJS CONFIGURATION ====================
+        const EMAILJS_SERVICE_ID = 'service_0ouactq';
+        const EMAILJS_TEMPLATE_ID = 'template_gsz3g0b';
+        const EMAILJS_PUBLIC_KEY = 'iNMFrJ6gaXRcGRqfU';
+
+        (function() {
+            if (typeof emailjs !== 'undefined') {
+                emailjs.init(EMAILJS_PUBLIC_KEY);
+            }
+        })();
+
+        // ==================== STATE VARIABLES ====================
+        let cart = [];
+        let currentBaseColor = '#C77D8A';
+        let glitterTopCoatSelected = false;
+        let selectedShape = 'almond';
+        let currentGelPolish = null;
+        let isFromCart = false;
+        let cartForBooking = [];
+        let currentTestimonial = 0;
+        let testimonialInterval;
+        let currentModalBookingStep = 1;
+
+        /**
+         * GEL POLISH COLLECTION
+         * 
+         * HOW TO MARK AN ITEM AS "OUT OF STOCK":
+         * 
+         * OPTION 1 (RECOMMENDED - shows "OUT OF STOCK" overlay + tooltip + disables selection):
+         *    Change `inStock: true` → `inStock: false` on any polish object below.
+         * 
+         * OPTION 2 (by commenting it out):
+         *    Add `//` at the start of the entire object line (e.g. // { brand: ..., inStock: true }).
+         *    The item will be completely removed from both carousels.
+         * 
+         * This makes it super easy to manage stock without breaking the website.
+         */
+        const gelPolishes = [
+            // Jodsone
+            { brand: "Jodsone", code: "B02", name: "Jodsone B02", hex: "#F2C1C8", price: 72, inStock: true },
+            { brand: "Jodsone", code: "B03", name: "Jodsone B03", hex: "#E8D0C0", price: 72, inStock: true },
+            { brand: "Jodsone", code: "B12", name: "Jodsone B12", hex: "#C77D8A", price: 75, inStock: false }, // ← EXAMPLE: OUT OF STOCK
+            { brand: "Jodsone", code: "B15", name: "Jodsone B15", hex: "#8B4557", price: 78, inStock: true },
+            { brand: "Jodsone", code: "B23", name: "Jodsone B23", hex: "#B76B7A", price: 75, inStock: true },
+            { brand: "Jodsone", code: "B26", name: "Jodsone B26", hex: "#D98A9A", price: 74, inStock: true },
+            { brand: "Jodsone", code: "B27", name: "Jodsone B27", hex: "#E8A0B0", price: 72, inStock: true },
+            { brand: "Jodsone", code: "B28", name: "Jodsone B28", hex: "#F5D0D8", price: 71, inStock: true },
+            { brand: "Jodsone", code: "B29", name: "Jodsone B29", hex: "#F8F1EC", price: 73, inStock: true },
+            { brand: "Jodsone", code: "B32", name: "Jodsone B32", hex: "#EDE4DC", price: 74, inStock: true },
+            { brand: "Jodsone", code: "Glitter", name: "Jodsone Glitter Top Coat", hex: "linear-gradient(135deg, #ffffff, #f0e68c, #ffffff)", price: 18, isGlitter: true, inStock: true },
+            
+            // Beetles
+            { brand: "Beetles", code: "823", name: "Beetles 823", hex: "#9B2335", price: 72, inStock: true },
+            { brand: "Beetles", code: "825", name: "Beetles 825", hex: "#FF1493", price: 74, inStock: true },
+            { brand: "Beetles", code: "826", name: "Beetles 826", hex: "#FF6B6B", price: 73, inStock: true },
+            { brand: "Beetles", code: "827", name: "Beetles 827", hex: "#FFB6C1", price: 71, inStock: true },
+            { brand: "Beetles", code: "830", name: "Beetles 830", hex: "#DDA0DD", price: 72, inStock: true },
+            { brand: "Beetles", code: "831", name: "Beetles 831", hex: "#98FB98", price: 73, inStock: true },
+            { brand: "Beetles", code: "834", name: "Beetles 834", hex: "#2F4F4F", price: 75, inStock: true },
+            { brand: "Beetles", code: "835", name: "Beetles 835", hex: "#006400", price: 76, inStock: true },
+            { brand: "Beetles", code: "836", name: "Beetles 836", hex: "#DAA520", price: 74, inStock: true },
+            { brand: "Beetles", code: "838", name: "Beetles 838", hex: "#1C2526", price: 72, inStock: true },
+            { brand: "Beetles", code: "c024", name: "Beetles c024", hex: "#A9A9A9", price: 71, inStock: true },
+            { brand: "Beetles", code: "e061", name: "Beetles e061", hex: "#87CEEB", price: 73, inStock: true },
+            { brand: "Beetles", code: "e287", name: "Beetles e287", hex: "#D8BFD8", price: 72, inStock: true },
+            { brand: "Beetles", code: "e288", name: "Beetles e288", hex: "#E6E6FA", price: 71, inStock: true },
+            { brand: "Beetles", code: "e289", name: "Beetles e289", hex: "#8FBC8F", price: 73, inStock: true },
+            { brand: "Beetles", code: "e291", name: "Beetles e291", hex: "#CD853F", price: 74, inStock: true },
+            { brand: "Beetles", code: "e302", name: "Beetles e302", hex: "#3D2B1F", price: 75, inStock: true }
+        ];
+
+        const testimonials = [
+            { quote: "Usual Acrylics is now my go-to for every important meeting I go to. The Ivory Lace is my signature now. It makes every outfit I wear look expensive.", name: "Elena Voss", title: "Creative Director, Atelier", rating: 5, avatar: "https://i.pravatar.cc/40?img=32" },
+            { quote: "I got the Burgundy Rose for my wedding and it photographed beautifully. You made me feel so special the entire appointment.", name: "Sofia Patel", title: "Bride, March 2025", rating: 5, avatar: "https://i.pravatar.cc/40?img=47" },
+            { quote: "I’ve been coming here for two years. The attention to detail and the warm, flower-filled studio makes it my favorite self-care experience.", name: "Amara Kline", title: "Interior Designer", rating: 5, avatar: "https://i.pravatar.cc/40?img=28" }
+        ];
+
+        // ==================== UTILITY FUNCTIONS ====================
+        function initTailwind() {
+            // Tailwind already loaded via CDN
+        }
+
+        function initScrollProgress() {
+            const progress = document.getElementById('scroll-progress');
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                progress.style.width = Math.min(scrollPercent, 100) + '%';
+            });
+        }
+
+        function initNav() {
+            const nav = document.getElementById('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 80) {
+                    nav.classList.add('nav-scrolled');
+                } else {
+                    nav.classList.remove('nav-scrolled');
+                }
+            });
+        }
+
+        // Hero canvas animation
+        let canvas, ctx, petals = [];
+        function initHeroCanvas() {
+            canvas = document.getElementById('hero-canvas');
+            ctx = canvas.getContext('2d', { alpha: true });
+            
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight * 0.95;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+            
+            class Petal {
+                constructor() { this.reset(); }
+                reset() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height * 0.6 - 50;
+                    this.size = Math.random() * 7 + 4.5;
+                    this.speed = Math.random() * 0.6 + 0.35;
+                    this.angle = Math.random() * Math.PI * 2;
+                    this.angleSpeed = (Math.random() - 0.5) * 0.03;
+                    this.opacity = Math.random() * 0.35 + 0.12;
+                    this.color = Math.random() > 0.6 ? '#E8B4BC' : '#C77D8A';
+                }
+                update() {
+                    this.y += this.speed;
+                    this.x += Math.sin(this.angle) * 0.6;
+                    this.angle += this.angleSpeed;
+                    if (this.y > canvas.height * 0.92) { this.reset(); this.y = -20; }
+                }
+                draw() {
+                    ctx.save();
+                    ctx.translate(this.x, this.y);
+                    ctx.rotate(this.angle * 0.8);
+                    ctx.globalAlpha = this.opacity;
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.ellipse(0, 0, this.size * 0.7, this.size, 0, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+            
+            for (let i = 0; i < 28; i++) petals.push(new Petal());
+            
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                petals.forEach(p => { p.update(); p.draw(); });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        // Render gel polish carousels with OUT OF STOCK support
+        function renderGelPolishes() {
+            const jodsoneContainer = document.getElementById('jodsone-carousel');
+            const beetlesContainer = document.getElementById('beetles-carousel');
+            
+            if (!jodsoneContainer || !beetlesContainer) return;
+            
+            jodsoneContainer.innerHTML = '';
+            beetlesContainer.innerHTML = '';
+            
+            gelPolishes.forEach((polish) => {
+                const swatch = document.createElement('div');
+                let className = `flex-shrink-0 swatch rounded-3xl border border-[#E8B4BC]/40 transition-all snap-start relative group shadow-sm`;
+                
+                const isInStock = polish.inStock !== false;
+                
+                if (isInStock) {
+                    className += ' cursor-pointer hover:border-[#C77D8A]';
+                } else {
+                    className += ' cursor-not-allowed opacity-70';
+                }
+                
+                swatch.className = className;
+                swatch.style.background = polish.hex;
+                
+                if (polish.isGlitter) {
+                    swatch.style.background = 'linear-gradient(135deg, #fff 25%, #f0e68c 50%, #fff 75%)';
+                    swatch.style.boxShadow = '0 0 12px rgba(212, 175, 55, 0.7)';
+                    const glitterLabel = document.createElement('span');
+                    glitterLabel.className = "absolute -top-1 -right-1 text-xs bg-[#D4AF37] text-white px-1.5 py-0.5 rounded-2xl";
+                    glitterLabel.textContent = '✨';
+                    swatch.appendChild(glitterLabel);
+                }
+                
+                // Tooltip
+                const tooltip = document.createElement('div');
+                tooltip.className = `absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1 bg-[#5C2E3D] text-white text-xs rounded-2xl opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap z-20 shadow`;
+                let tooltipText = `${polish.name} • $${polish.price}`;
+                if (!isInStock) {
+                    tooltipText += ' <span class="text-rose-300">• OUT OF STOCK</span>';
+                }
+                tooltip.innerHTML = tooltipText;
+                swatch.appendChild(tooltip);
+                
+                // Out of stock overlay
+                if (!isInStock) {
+                    const overlay = document.createElement('div');
+                    overlay.className = 'absolute inset-0 bg-black/55 flex items-center justify-center rounded-3xl z-10 pointer-events-none';
+                    overlay.innerHTML = `
+                        <div class="text-white text-[10px] font-bold tracking-widest bg-[#C77D8A] px-3 py-1 rounded-3xl shadow-inner text-center leading-none">
+                            OUT OF<br>STOCK
+                        </div>
+                    `;
+                    swatch.appendChild(overlay);
+                } else {
+                    swatch.onclick = () => selectGelPolish(polish, swatch);
+                }
+                
+                if (polish.brand === "Jodsone") {
+                    jodsoneContainer.appendChild(swatch);
+                } else {
+                    beetlesContainer.appendChild(swatch);
+                }
+            });
+        }
+
+        // Gel polish selection - now skips out-of-stock items
+        function selectGelPolish(polish, element) {
+            if (polish.inStock === false) {
+                return; // prevent any interaction
+            }
+            
+            const preview = document.getElementById('nail-preview');
+            const nameEl = document.getElementById('preview-name');
+            const priceEl = document.getElementById('dynamic-price');
+            
+            if (polish.isGlitter) {
+                glitterTopCoatSelected = !glitterTopCoatSelected;
+                
+                if (glitterTopCoatSelected) {
+                    preview.style.boxShadow = '0 20px 45px rgba(0,0,0,0.22), inset 0 22px 32px rgba(255,255,255,0.6), 0 0 30px rgba(212,175,55,0.7)';
+                    createGlitterBurst(preview, 30);
+                    
+                    let currentName = nameEl.innerHTML;
+                    if (!currentName.includes(' + Glitter')) {
+                        nameEl.innerHTML = currentName + ' + Glitter Top Coat';
+                    }
+                    
+                    let currentPrice = parseInt(priceEl.innerHTML.replace('$', '')) || 72;
+                    priceEl.innerHTML = `$${(currentPrice + polish.price)}`;
+                } else {
+                    preview.style.boxShadow = '0 20px 45px rgba(0,0,0,0.22), inset 0 22px 32px rgba(255,255,255,0.6), inset 0 -14px 22px rgba(0,0,0,0.18)';
+                    document.getElementById('glitter-container').innerHTML = '';
+                    
+                    let currentName = nameEl.innerHTML;
+                    nameEl.innerHTML = currentName.replace(' + Glitter Top Coat', '');
+                    
+                    let currentPrice = parseInt(priceEl.innerHTML.replace('$', '')) || 72;
+                    priceEl.innerHTML = `$${(currentPrice - polish.price)}`;
+                }
+                
+                document.querySelectorAll('#jodsone-carousel > div, #beetles-carousel > div').forEach(el => {
+                    if (el.innerHTML.includes('✨')) {
+                        if (glitterTopCoatSelected) {
+                            el.classList.add('ring-2', 'ring-[#C77D8A]', 'ring-offset-2', 'ring-offset-white');
+                        } else {
+                            el.classList.remove('ring-2', 'ring-[#C77D8A]', 'ring-offset-2', 'ring-offset-white');
+                        }
+                    }
+                });
+                return;
+            }
+            
+            currentBaseColor = polish.hex;
+            currentGelPolish = polish;
+            
+            preview.style.background = polish.hex;
+            preview.style.boxShadow = '0 20px 45px rgba(0,0,0,0.22), inset 0 22px 32px rgba(255,255,255,0.6), inset 0 -14px 22px rgba(0,0,0,0.18)';
+            
+            if (glitterTopCoatSelected) {
+                preview.style.boxShadow = '0 20px 45px rgba(0,0,0,0.22), inset 0 22px 32px rgba(255,255,255,0.6), 0 0 30px rgba(212,175,55,0.7)';
+                createGlitterBurst(preview, 15);
+            }
+            
+            let displayPrice = polish.price;
+            let displayName = polish.name;
+            
+            if (glitterTopCoatSelected) {
+                displayPrice += 18;
+                displayName += ' + Glitter Top Coat';
+            }
+            
+            nameEl.innerHTML = displayName;
+            document.getElementById('preview-price').innerHTML = `$${displayPrice} • Full set`;
+            priceEl.innerHTML = `$${displayPrice}`;
+            
+            document.querySelectorAll('#jodsone-carousel > div, #beetles-carousel > div').forEach(el => {
+                el.classList.remove('ring-2', 'ring-[#C77D8A]', 'ring-offset-2', 'ring-offset-white');
+            });
+            if (element) element.classList.add('ring-2', 'ring-[#C77D8A]', 'ring-offset-2', 'ring-offset-white');
+        }
+
+        function scrollCarousel(brand, direction) {
+            const container = document.getElementById(`${brand}-carousel`);
+            if (!container) return;
+            const scrollAmount = 140;
+            container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+
+        function selectShape(element, shape) {
+            document.querySelectorAll('.shape-btn').forEach(el => {
+                el.classList.remove('active', 'border-[#C77D8A]', 'bg-[#FDF6F0]');
+                el.classList.add('border-[#E8B4BC]/60');
+            });
+            element.classList.add('active', 'border-[#C77D8A]', 'bg-[#FDF6F0]');
+            selectedShape = shape;
+            
+            const preview = document.getElementById('nail-preview');
+            let borderRadius = '58% 58% 20% 20%';
+            if (shape === 'square') borderRadius = '14% 14% 14% 14%';
+            else if (shape === 'coffin') borderRadius = '24% 24% 10% 10%';
+            else if (shape === 'stiletto') borderRadius = '38% 38% 8% 8%';
+            preview.style.borderRadius = borderRadius;
+        }
+
+        function updateLength() {
+            const slider = document.getElementById('length-slider');
+            const preview = document.getElementById('nail-preview');
+            const value = parseInt(slider.value);
+            let height = 205;
+            if (value === 1) height = 155;
+            else if (value === 2) height = 180;
+            else if (value === 3) height = 205;
+            else if (value === 4) height = 230;
+            else if (value === 5) height = 255;
+            preview.style.height = `${height}px`;
+        }
+
+        function createGlitterBurst(container, count) {
+            const glitterContainer = document.getElementById('glitter-container');
+            glitterContainer.innerHTML = '';
+            for (let i = 0; i < count; i++) {
+                setTimeout(() => {
+                    const glitter = document.createElement('div');
+                    glitter.className = 'glitter';
+                    glitter.style.left = Math.random() * 100 + '%';
+                    glitter.style.top = Math.random() * 60 + 15 + '%';
+                    glitter.style.width = (Math.random() * 4 + 3) + 'px';
+                    glitter.style.height = glitter.style.width;
+                    glitter.style.background = Math.random() > 0.5 ? '#D4AF37' : '#fff';
+                    glitterContainer.appendChild(glitter);
+                    setTimeout(() => {
+                        glitter.style.transition = 'all 0.7s ease';
+                        glitter.style.opacity = '0';
+                        setTimeout(() => glitter.remove(), 700);
+                    }, 1100);
+                }, i * 16);
+            }
+        }
+
+        // Cart functions (unchanged - out-of-stock items simply can't be added)
+        function updateCartCount() {
+            const countEl = document.getElementById('cart-count');
+            countEl.textContent = cart.length;
+            countEl.style.display = cart.length > 0 ? 'flex' : 'none';
+        }
+
+        function showCart() {
+            const modal = document.getElementById('cart-modal');
+            const itemsContainer = document.getElementById('cart-items');
+            itemsContainer.innerHTML = '';
+            let subtotal = 0;
+            
+            if (cart.length === 0) {
+                itemsContainer.innerHTML = `<div class="text-center py-12"><i class="fa-solid fa-shopping-bag text-6xl text-[#E8B4BC]/50 mx-auto mb-4"></i><div class="font-medium text-lg">Your cart is empty</div><div class="text-xs mt-1.5 text-[#8B6F73]">Explore the studio or design something beautiful</div></div>`;
+                document.getElementById('cart-checkout-section').style.display = 'none';
+            } else {
+                cart.forEach((item, index) => {
+                    subtotal += item.price;
+                    itemsContainer.innerHTML += `
+                        <div class="flex gap-x-5 border-b pb-6 last:border-b-0 last:pb-0">
+                            <div class="w-20 h-20 flex-shrink-0 rounded-3xl overflow-hidden border border-[#E8B4BC]/50 shadow-inner" style="background: ${item.color}">
+                                <div class="w-full h-full flex items-center justify-center text-3xl text-white/30">💅</div>
+                            </div>
+                            <div class="flex-1 min-w-0 pt-1">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <div class="font-semibold text-base">${item.name}</div>
+                                        <div class="text-xs text-[#8B6F73]">${item.shape.charAt(0).toUpperCase() + item.shape.slice(1)} • ${item.length} length ${item.glitter ? '• Glitter' : ''}</div>
+                                    </div>
+                                    <div class="font-semibold text-base">$${item.price}</div>
+                                </div>
+                                <button onclick="removeFromCart(${index}); event.stopImmediatePropagation()" class="text-xs text-red-500 hover:text-red-700 mt-3 flex items-center gap-x-1">
+                                    <i class="fa-solid fa-trash text-xs"></i> <span>Remove</span>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+                document.getElementById('cart-checkout-section').style.display = 'block';
+                document.getElementById('cart-subtotal').innerHTML = `$${subtotal}`;
+                document.getElementById('cart-total').innerHTML = `$${subtotal + 25}`;
+            }
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartCount();
+            showCart();
+        }
+
+        function hideCart() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        function addCustomToCart() {
+            const preview = document.getElementById('nail-preview');
+            const itemName = document.getElementById('preview-name').innerHTML;
+            const price = parseInt(document.getElementById('dynamic-price').innerHTML.replace('$', '')) || 78;
+            
+            const item = {
+                id: Date.now(),
+                name: itemName,
+                color: preview.style.background || currentBaseColor,
+                price: price,
+                shape: selectedShape,
+                length: document.getElementById('length-slider').value,
+                glitter: glitterTopCoatSelected,
+                brand: currentGelPolish ? currentGelPolish.brand : null,
+                code: currentGelPolish ? currentGelPolish.code : null
+            };
+            
+            cart.push(item);
+            updateCartCount();
+            showToast(`Added ${itemName} to cart`);
+            setTimeout(() => showCart(), 650);
+        }
+
+        function checkout() {
+            if (cart.length === 0) return;
+            hideCart();
+            isFromCart = true;
+            cartForBooking = JSON.parse(JSON.stringify(cart));
+            cart = [];
+            updateCartCount();
+            showBookingModal();
+            document.getElementById('modal-booking-step-1').classList.add('hidden');
+            document.getElementById('modal-booking-step-2').classList.add('hidden');
+            document.getElementById('modal-booking-step-3').classList.remove('hidden');
+            currentModalBookingStep = 3;
+            document.getElementById('modal-booking-progress').style.width = '100%';
+            document.getElementById('modal-step-number').innerHTML = '3';
+        }
+
+        function showBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            if (!isFromCart) {
+                currentModalBookingStep = 1;
+                document.getElementById('modal-booking-step-1').classList.remove('hidden');
+                document.getElementById('modal-booking-step-2').classList.add('hidden');
+                document.getElementById('modal-booking-step-3').classList.add('hidden');
+                document.getElementById('modal-booking-progress').style.width = '33%';
+                document.getElementById('modal-step-number').innerHTML = '1';
+            }
+        }
+
+        function hideBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            isFromCart = false;
+        }
+
+        function nextBookingModalStep() {
+            if (currentModalBookingStep === 1) {
+                document.getElementById('modal-booking-step-1').classList.add('hidden');
+                document.getElementById('modal-booking-step-2').classList.remove('hidden');
+                currentModalBookingStep = 2;
+                document.getElementById('modal-booking-progress').style.width = '66%';
+                document.getElementById('modal-step-number').innerHTML = '2';
+            } else if (currentModalBookingStep === 2) {
+                document.getElementById('modal-booking-step-2').classList.add('hidden');
+                document.getElementById('modal-booking-step-3').classList.remove('hidden');
+                currentModalBookingStep = 3;
+                document.getElementById('modal-booking-progress').style.width = '100%';
+                document.getElementById('modal-step-number').innerHTML = '3';
+            }
+        }
+
+        function prevBookingModalStep() {
+            if (currentModalBookingStep === 2) {
+                document.getElementById('modal-booking-step-2').classList.add('hidden');
+                document.getElementById('modal-booking-step-1').classList.remove('hidden');
+                currentModalBookingStep = 1;
+                document.getElementById('modal-booking-progress').style.width = '33%';
+                document.getElementById('modal-step-number').innerHTML = '1';
+            } else if (currentModalBookingStep === 3) {
+                document.getElementById('modal-booking-step-3').classList.add('hidden');
+                document.getElementById('modal-booking-step-2').classList.remove('hidden');
+                currentModalBookingStep = 2;
+                document.getElementById('modal-booking-progress').style.width = '66%';
+                document.getElementById('modal-step-number').innerHTML = '2';
+            }
+        }
+
+        function proceedToCashAppPayment() {
+            const name = document.getElementById('modal-client-name').value.trim() || 'Client';
+            const clientEmail = document.getElementById('modal-client-email').value.trim() || '';
+            const notes = document.getElementById('modal-client-notes').value.trim() || 'No notes';
+            const date = document.getElementById('modal-booking-date').value || 'TBD';
+            const time = document.getElementById('modal-booking-time').value || 'TBD';
+
+            let messageBody = '';
+            let total = 0;
+
+            if (isFromCart && cartForBooking.length > 0) {
+                let itemsList = cartForBooking.map((item, idx) => {
+                    return `${idx+1}. ${item.name} (${item.shape}, length ${item.length})${item.glitter ? ' + Glitter' : ''} - $${item.price}`;
+                }).join('\n');
+                messageBody = `CUSTOM CART ORDER FROM DESIGN STUDIO:\n${itemsList}\n\nAdditional Notes: ${notes}`;
+                total = cartForBooking.reduce((acc, item) => acc + item.price, 0) + 25;
+            } else {
+                const serviceEl = document.querySelector('#modal-booking-form input[name="service"]:checked');
+                const service = serviceEl ? serviceEl.value : 'Signature Acrylic Set — $128';
+                let baseTotal = 128;
+                if (service.includes('$78')) baseTotal = 78;
+                else if (service.includes('$95')) baseTotal = 95;
+                total = baseTotal;
+                messageBody = `Service: ${service}\nNotes: ${notes}`;
+            }
+
+            const fullMessage = `${messageBody}\n\nPreferred Date/Time: ${date} at ${time}\nTotal Due: $${total}`;
+
+            const templateParams = {
+                to_email: 'pence.sean@live.jobcorps.org',
+                name: name,
+                email: clientEmail,
+                time: `${date} at ${time}`,
+                message: fullMessage,
+                total: total
+            };
+
+            const cashappUsername = '$SeanPence2';
+            window.open(`https://cash.app/${cashappUsername}/${Math.round(total)}`, '_blank');
+
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+                .then(() => {
+                    hideBookingModal();
+                    isFromCart = false;
+                    cartForBooking = [];
+                    const successHTML = `
+                        <div class="fixed inset-0 bg-black/80 z-[300] flex items-center justify-center p-4" onclick="if(event.target === this) this.remove()">
+                            <div onclick="event.stopImmediatePropagation()" class="bg-white rounded-3xl max-w-md w-full p-10 text-center">
+                                <div class="mx-auto w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mb-6">
+                                    <i class="fa-solid fa-check text-emerald-600 text-5xl"></i>
+                                </div>
+                                <div class="text-3xl font-semibold tracking-tight">Appointment secured!</div>
+                                <div class="mt-4 text-[#6B5559]">Cash App opened + detailed booking email sent to pence.sean@live.jobcorps.org with your custom details.</div>
+                                <div class="mt-8 text-left bg-[#FDF6F0] p-5 rounded-2xl border border-[#E8B4BC]/40 text-sm">
+                                    <div class="font-semibold mb-2">Next steps:</div>
+                                    <div class="text-[#6B5559] space-y-1">
+                                        • Confirmation email will arrive shortly<br>
+                                        • Reply to confirm details if needed<br>
+                                        • Arrive 10 minutes early
+                                    </div>
+                                </div>
+                                <button onclick="this.closest('.fixed').remove()" class="mt-10 w-full py-4 bg-[#5C2E3D] text-white font-semibold rounded-3xl">RETURN TO HOME</button>
+                            </div>
+                        </div>
+                    `;
+                    document.body.insertAdjacentHTML('beforeend', successHTML);
+                })
+                .catch((error) => {
+                    console.error("EmailJS Error:", error);
+                    alert("Payment link opened. Email may have failed - please contact via Instagram.");
+                    hideBookingModal();
+                    isFromCart = false;
+                    cartForBooking = [];
+                });
+        }
+
+        // ==================== TESTIMONIAL CAROUSEL ====================
+        function renderTestimonials() {
+            const track = document.getElementById('testimonial-track');
+            track.innerHTML = '';
+            testimonials.forEach((t) => {
+                const slide = document.createElement('div');
+                slide.className = `carousel-slide min-w-full px-3 md:px-6`;
+                slide.innerHTML = `
+                    <div class="bg-white/10 backdrop-blur-lg p-10 md:p-12 rounded-3xl border border-white/20 max-w-[620px] mx-auto">
+                        <div class="flex mb-6 text-[#E8B4BC]">${'<i class="fa-solid fa-star"></i>'.repeat(t.rating)}</div>
+                        <div class="text-xl md:text-2xl leading-snug">"${t.quote}"</div>
+                        <div class="mt-10 flex items-center gap-x-4">
+                            <img src="${t.avatar}" class="w-11 h-11 rounded-2xl ring-2 ring-white/30" alt="">
+                            <div>
+                                <div class="font-semibold">${t.name}</div>
+                                <div class="text-xs text-[#E8B4BC]">${t.title}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                track.appendChild(slide);
+            });
+            
+            const dotsContainer = document.getElementById('testimonial-dots');
+            dotsContainer.innerHTML = '';
+            testimonials.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.className = `w-2.5 h-2.5 rounded-full transition-all ${i === 0 ? 'bg-white w-8' : 'bg-white/40'}`;
+                dot.onclick = () => goToTestimonial(i);
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        function startTestimonialTimer() {
+            if (testimonialInterval) clearInterval(testimonialInterval);
+            testimonialInterval = setInterval(() => {
+                if (!document.hidden) nextTestimonial();
+            }, 8500);
+        }
+
+        function initTestimonialCarousel() {
+            renderTestimonials();
+            startTestimonialTimer();
+        }
+
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            document.getElementById('testimonial-track').style.transform = `translateX(-${currentTestimonial * 100}%)`;
+            updateTestimonialDots();
+            startTestimonialTimer();
+        }
+
+        function prevTestimonial() {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            document.getElementById('testimonial-track').style.transform = `translateX(-${currentTestimonial * 100}%)`;
+            updateTestimonialDots();
+            startTestimonialTimer();
+        }
+
+        function goToTestimonial(index) {
+            currentTestimonial = index;
+            document.getElementById('testimonial-track').style.transform = `translateX(-${currentTestimonial * 100}%)`;
+            updateTestimonialDots();
+            startTestimonialTimer();
+        }
+
+        function updateTestimonialDots() {
+            const dots = document.querySelectorAll('#testimonial-dots button');
+            dots.forEach((dot, i) => {
+                if (i === currentTestimonial) {
+                    dot.classList.add('bg-white', 'w-8');
+                    dot.classList.remove('bg-white/40');
+                } else {
+                    dot.classList.remove('bg-white', 'w-8');
+                    dot.classList.add('bg-white/40');
+                }
+            });
+        }
+
+        // Scroll reveal
+        function initScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            reveals.forEach(el => observer.observe(el));
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('success-toast');
+            toast.querySelector('div').innerHTML = `<div class="font-semibold">${message}</div><div class="text-xs opacity-80">We can’t wait to see you</div>`;
+            toast.style.display = 'flex';
+            setTimeout(() => {
+                toast.style.transition = 'all 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
+                toast.style.opacity = '0';
+                setTimeout(() => {
+                    toast.style.display = 'none';
+                    toast.style.transition = '';
+                    toast.style.opacity = '1';
+                }, 500);
+            }, 2600);
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function initKeyboardShortcuts() {
+            document.addEventListener('keydown', function(e) {
+                if (e.key.toLowerCase() === 'c' && document.activeElement.tagName === 'BODY') {
+                    document.getElementById('studio').scrollIntoView({ behavior: 'smooth' });
+                }
+                if (e.key === 'Escape') {
+                    const cartModal = document.getElementById('cart-modal');
+                    if (cartModal && cartModal.classList.contains('flex')) hideCart();
+                    
+                    const bookingModal = document.getElementById('booking-modal');
+                    if (bookingModal && bookingModal.classList.contains('flex')) hideBookingModal();
+                    
+                    const privacyModal = document.getElementById('privacy-modal');
+                    if (privacyModal && privacyModal.classList.contains('flex')) hidePrivacyModal();
+                    
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) toggleMobileMenu();
+                }
+            });
+        }
+
+        function showPrivacyModal() {
+            const modal = document.getElementById('privacy-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function hidePrivacyModal() {
+            const modal = document.getElementById('privacy-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        // Main initialization
+        function initializeWebsite() {
+            initTailwind();
+            initScrollProgress();
+            initNav();
+            initHeroCanvas();
+            initTestimonialCarousel();
+            initScrollReveal();
+            initKeyboardShortcuts();
+            
+            cart = [];
+            updateCartCount();
+            
+            renderGelPolishes();
+            
+            // Default preview (only uses in-stock items)
+            setTimeout(() => {
+                const preview = document.getElementById('nail-preview');
+                // Find first in-stock polish
+                const firstInStock = gelPolishes.find(p => p.inStock !== false) || gelPolishes[0];
+                preview.style.background = firstInStock.hex;
+                document.getElementById('preview-name').innerHTML = firstInStock.name;
+                document.getElementById('preview-price').innerHTML = `$${firstInStock.price} • Full set`;
+                document.getElementById('dynamic-price').innerHTML = `$${firstInStock.price}`;
+                currentBaseColor = firstInStock.hex;
+                currentGelPolish = firstInStock;
+                
+                const firstSwatch = document.querySelector('#jodsone-carousel > div, #beetles-carousel > div');
+                if (firstSwatch) firstSwatch.classList.add('ring-2', 'ring-[#C77D8A]', 'ring-offset-2', 'ring-offset-white');
+            }, 120);
+            
+            const firstShape = document.querySelector('.shape-btn');
+            if (firstShape) firstShape.classList.add('active', 'border-[#C77D8A]', 'bg-[#FDF6F0]');
+            
+            const lengthSlider = document.getElementById('length-slider');
+            if (lengthSlider) lengthSlider.addEventListener('input', updateLength);
+            setTimeout(() => updateLength(), 150);
+            
+            console.log('%c✅ Usual Acrylics website updated — OUT OF STOCK feature added! Comment out objects or set inStock: false to manage inventory.', 'color:#C77D8A; font-weight:600; font-size:13px');
+        }
+
+        window.onload = initializeWebsite;
+    </script>
+</body>
+</html>
