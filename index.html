@@ -220,7 +220,7 @@
         @media (max-width: 640px) {
             .nail-preview { 
                 width: 88px !important; 
-                height: 168px !important; 
+                height: 168px; 
             }
             .nail-preview::before { 
                 top: 15px !important;
@@ -295,7 +295,7 @@
                 <div class="hidden md:flex items-center gap-x-9 text-sm font-medium tracking-[-0.2px]">
                     <a href="#studio" class="hover:text-[#C77D8A] transition-colors px-3 py-1">Design Studio</a>
                     <a href="#experience" class="hover:text-[#C77D8A] transition-colors px-3 py-1">The Experience</a>
-                    <a href="#artist" class="hover:text-[#C77D8A] transition-colors px-3 py-1">Meet Sean</a>
+                    <a href="#artist" class="hover:text-[#C77D8A] transition-colors px-3 py-1">Meet Miracle</a>
                     <a href="#stories" class="hover:text-[#C77D8A] transition-colors px-3 py-1">Stories</a>
                 </div>
 
@@ -353,8 +353,8 @@
                         <div class="w-9 h-9 bg-white ring-[2.5px] ring-[#FDF6F0] rounded-full overflow-hidden ring-offset-2 ring-offset-[#FDF6F0]"><img src="images/melanymusillo.jpg" class="object-cover" alt=""></div>
                     </div>
                     <div>
-                        <div class="font-semibold text-sm">Joined by <span class="text-[#C77D8A]">25</span> women this year</div>
-                        <div class="text-xs text-[#8B6F73]">Average rating: 4.98 / 5</div>
+                        <div class="font-semibold text-sm">Joined by <span class="text-[#C77D8A]">35</span> women this year</div>
+                        <div class="text-xs text-[#8B6F73]">Average rating: 4.94 / 5</div>
                     </div>
                 </div>
             </div>
@@ -529,7 +529,7 @@
                         </div>
                         <div class="flex items-center gap-x-2 text-sm">
                             <i class="fa-solid fa-spa text-[#C77D8A]"></i>
-                            <span class="font-medium">Over 2 years perfecting the craft</span>
+                            <span class="font-medium">1.5 years perfecting the craft</span>
                         </div>
                     </div>
                     <a href="#studio" onclick="document.getElementById('studio').scrollIntoView({ behavior: 'smooth' })" class="mt-10 inline-flex items-center gap-x-3 px-8 py-4 bg-[#5C2E3D] hover:bg-black text-white font-semibold rounded-3xl transition-all">
@@ -592,7 +592,7 @@
                         <div class="font-semibold text-lg">What is the deposit for?</div>
                         <i class="fa-solid fa-chevron-down transition-transform"></i>
                     </div>
-                    <div class="faq-answer text-[#6B5559] mt-4">The $25 deposit holds your spot and is applied toward your service total. It’s fully refundable with 48 hours notice.</div>
+                    <div class="faq-answer text-[#6B5559] mt-4">The $15 deposit holds your spot and is applied toward your service total. It is non-refundable.</div>
                 </div>
                 
                 <div onclick="toggleFaq(this)" class="faq-item border border-[#E8B4BC]/40 rounded-3xl p-6 cursor-pointer bg-white">
@@ -608,7 +608,7 @@
                         <div class="font-semibold text-lg">What if I need to cancel?</div>
                         <i class="fa-solid fa-chevron-down transition-transform"></i>
                     </div>
-                    <div class="faq-answer text-[#6B5559] mt-4">Free cancellation up to 48 hours before your appointment. Just reply to your confirmation email or message me on Instagram.</div>
+                    <div class="faq-answer text-[#6B5559] mt-4">Deposits are non-refundable once paid. Please book only when you are certain you can attend. Message me on Instagram for any questions or changes.</div>
                 </div>
             </div>
         </div>
@@ -626,7 +626,7 @@
                 <i class="fa-solid fa-calendar-check group-hover:rotate-12 transition"></i>
             </button>
             
-            <div class="mt-8 text-xs text-[#8B6F73]">Appointments confirmed within 2 hours • 48-hour free cancellation</div>
+            <div class="mt-8 text-xs text-[#8B6F73]">Appointments confirmed within 2 hours • $15 non-refundable deposit required</div>
         </div>
     </section>
 
@@ -654,9 +654,9 @@
                 <div class="space-y-3">
                     <div>1701 N Church St.</div>
                     <div>McKinney, TX 75069</div>
-                    <div class="pt-2">Mon–Thu 5pm–9pm</div>
-                    <div>Wed 5pm-7pm</div>
-                    <div>Fri-Sun 10am–11pm</div>
+                    <div class="pt-2">Mon–Fri (excluding Wed) 4:40pm–9pm</div>
+                    <div>Wed 4:40pm-7pm</div>
+                    <div>Sat-Sun 12:30pm–10pm</div>
                 </div>
             </div>
             
@@ -667,7 +667,6 @@
                     <a href="#experience" class="hover:text-white transition">The Experience</a>
                     <a href="#artist" class="hover:text-white transition">Meet Miracle</a>
                     <a href="#stories" class="hover:text-white transition">Stories</a>
-                    <a href="#" class="hover:text-white transition">Gift Cards</a>
                     <a href="#" class="hover:text-white transition">Nail Care Guide</a>
                 </div>
                 
@@ -696,15 +695,15 @@
                     <div id="cart-subtotal" class="font-semibold">$194</div>
                 </div>
                 <div class="flex justify-between text-xs text-[#8B6F73]">
-                    <div>$25 deposit (applied to your total at appointment)</div>
-                    <div>$25</div>
+                    <div>$15 non-refundable deposit (applied to your total at appointment)</div>
+                    <div>$15</div>
                 </div>
                 
                 <button id="checkout-btn" onclick="checkout()" class="mt-8 w-full py-[17px] bg-[#5C2E3D] text-white font-semibold rounded-3xl flex items-center justify-center gap-x-3 hover:bg-black transition-colors">
                     CHECKOUT — <span id="cart-total">$219</span>
                 </button>
                 
-                <div class="text-center text-[10px] mt-4 text-[#8B6F73]">Secure checkout • 48-hour free cancellation</div>
+                <div class="text-center text-[10px] mt-4 text-[#8B6F73]">Secure checkout via Cash App • Deposits are non-refundable</div>
             </div>
         </div>
     </div>
@@ -836,7 +835,7 @@
                         <div class="text-base font-semibold">Total due at appointment</div>
                         <div id="summary-total" class="text-3xl font-bold text-[#5C2E3D]"></div>
                     </div>
-                    <div class="text-xs text-[#8B6F73] mb-8">Includes $25 deposit (applied toward your service)</div>
+                    <div class="text-xs text-[#8B6F73] mb-8">$15 non-refundable deposit (applied toward your service)</div>
                     
                     <div class="flex gap-4">
                         <button type="button" onclick="prevBookingModalStep()" class="flex-1 py-4 border border-[#5C2E3D] text-[#5C2E3D] font-semibold rounded-3xl">Back</button>
@@ -845,7 +844,7 @@
                         </button>
                     </div>
                     
-                    <div class="text-center mt-6 text-xs text-[#8B6F73]">48-hour free cancellation • Confirmation email sent immediately</div>
+                    <div class="text-center mt-6 text-xs text-[#8B6F73]">$15 non-refundable deposit • Confirmation email sent immediately</div>
                 </div>
             </form>
         </div>
@@ -881,7 +880,7 @@
                 
                 <div>
                     <div class="font-semibold text-sm mb-1.5 text-[#5C2E3D]">Your Rights &amp; Choices</div>
-                    <p class="text-sm">You can request to view, update, or delete your information anytime. Appointments can be cancelled up to 48 hours in advance with no fee. Just reply to your confirmation email or message me on Instagram.</p>
+                    <p class="text-sm">You can request to view, update, or delete your information anytime. Deposits are non-refundable once paid. Please provide at least 48 hours notice if you need to cancel or reschedule. Just reply to your confirmation email or message me on Instagram.</p>
                 </div>
                 
                 <div class="pt-6 border-t border-[#E8B4BC]/30 text-xs text-[#8B6F73]">
@@ -915,7 +914,7 @@
             <div class="flex flex-col gap-y-6 text-xl">
                 <a href="#studio" onclick="toggleMobileMenu()" class="py-2">Design Studio</a>
                 <a href="#experience" onclick="toggleMobileMenu()" class="py-2">The Experience</a>
-                <a href="#artist" onclick="toggleMobileMenu()" class="py-2">Meet Sean</a>
+                <a href="#artist" onclick="toggleMobileMenu()" class="py-2">Meet Miracle</a>
                 <a href="#stories" onclick="toggleMobileMenu()" class="py-2">Stories</a>
                 <div class="pt-12">
                     <button onclick="showBookingModal(); toggleMobileMenu()" class="w-full py-5 bg-[#5C2E3D] text-white rounded-3xl font-semibold">Secure Your Time</button>
@@ -925,7 +924,7 @@
     </div>
 
     <!-- NEW: Floating mobile book button -->
-    <button onclick="showBookingModal()" class="md:hidden fixed bottom-6 right-6 bg-[#5C2E3D] text-white shadow-2xl shadow-[#5C2E3D]/40 w-14 h-14 rounded-3xl flex items-center justify-center text-2xl z-[999] floating-book">
+    <button id="floating-book-btn" onclick="showBookingModal()" class="md:hidden fixed bottom-6 right-6 bg-[#5C2E3D] text-white shadow-2xl shadow-[#5C2E3D]/40 w-14 h-14 rounded-3xl flex items-center justify-center text-2xl z-[999] floating-book">
         <i class="fa-solid fa-calendar-check"></i>
     </button>
 
@@ -991,7 +990,7 @@
             { quote: "Usual Acrylics is now my go-to for every important meeting I go to. The Ivory Lace is my signature now. It makes every outfit I wear look expensive.", name: "Elena Voss", title: "Creative Director, Atelier", rating: 5, avatar: "images/glasses.jpg" },
             { quote: "I got the Burgundy Rose for my wedding and it photographed beautifully. You made me feel so special the entire appointment.", name: "Sofia Patel", title: "Bride, March 2025", rating: 5, avatar: "images/melany.jpg" },
             { quote: "I’ve been coming here for two years. The attention to detail and the warm, flower-filled studio makes it my favorite self-care experience.", name: "Amara Kline", title: "Interior Designer", rating: 5, avatar: "images/melcxo.jpg" },
-            { quote: "Sean is an absolute artist. My nails looked like they belonged on a magazine cover. I’ve never felt more confident leaving a salon.", name: "Mia Rodriguez", title: "Marketing Manager", rating: 5, avatar: "images/melanymusillo.jpg" }
+            { quote: "Miracle is an absolute artist. My nails looked like they belonged on a magazine cover. I’ve never felt more confident leaving a salon.", name: "Mia Rodriguez", title: "Marketing Manager", rating: 5, avatar: "images/melanymusillo.jpg" }
         ];
 
         // ==================== UTILITY FUNCTIONS ====================
@@ -1236,13 +1235,27 @@
         function updateLength() {
             const slider = document.getElementById('length-slider');
             const preview = document.getElementById('nail-preview');
+            if (!slider || !preview) return;
+
             const value = parseInt(slider.value);
-            let height = 205;
-            if (value === 1) height = 155;
-            else if (value === 2) height = 180;
-            else if (value === 3) height = 205;
-            else if (value === 4) height = 230;
-            else if (value === 5) height = 255;
+            const isMobile = window.innerWidth <= 640;
+
+            let height;
+            if (isMobile) {
+                // Scaled proportionally for mobile (medium = 168px base)
+                if (value === 1) height = 127;
+                else if (value === 2) height = 148;
+                else if (value === 3) height = 168;
+                else if (value === 4) height = 189;
+                else if (value === 5) height = 209;
+            } else {
+                // Desktop heights (unchanged)
+                if (value === 1) height = 155;
+                else if (value === 2) height = 180;
+                else if (value === 3) height = 205;
+                else if (value === 4) height = 230;
+                else if (value === 5) height = 255;
+            }
             preview.style.height = `${height}px`;
         }
 
@@ -1370,6 +1383,10 @@
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             
+            // Hide floating button when modal opens
+            const floatingBtn = document.getElementById('floating-book-btn');
+            if (floatingBtn) floatingBtn.classList.add('hidden');
+            
             if (!isFromCart) {
                 currentModalBookingStep = 1;
                 document.getElementById('modal-booking-step-1').classList.remove('hidden');
@@ -1394,6 +1411,10 @@
             modal.classList.remove('flex');
             modal.classList.add('hidden');
             isFromCart = false;
+            
+            // Show floating button when modal closes
+            const floatingBtn = document.getElementById('floating-book-btn');
+            if (floatingBtn) floatingBtn.classList.remove('hidden');
         }
 
         function nextBookingModalStep() {
@@ -1524,7 +1545,7 @@
                 messageBody = `Service: ${service}\nNotes: ${notes}`;
             }
 
-            const fullMessage = `${messageBody}\n\nPreferred Date/Time: ${date} at ${time}\nTotal Due: $${total}`;
+            const fullMessage = `${messageBody}\n\nPreferred Date/Time: ${date} at ${time}\nTotal Due: $${total}\n\nNote: $15 deposit is non-refundable.`;
 
             const templateParams = {
                 to_email: 'pence.sean@live.jobcorps.org',
@@ -1587,6 +1608,7 @@
                                         <div>Total due</div>
                                         <div>$${finalTotal}</div>
                                     </div>
+                                    <div class="text-xs text-[#8B6F73] mt-3">Note: $15 deposit is non-refundable</div>
                                 </div>
                                 
                                 <button onclick="this.closest('.fixed').remove()" class="mt-10 w-full py-4 bg-[#5C2E3D] text-white font-semibold rounded-3xl">RETURN TO HOME</button>
@@ -1789,10 +1811,11 @@
             if (lengthSlider) lengthSlider.addEventListener('input', updateLength);
             setTimeout(() => updateLength(), 150);
             
-            console.log('%c✅ Usual Acrylics website FULLY UPGRADED! ✨ 4-step booking modal with clearer service selection added.', 'color:#C77D8A; font-weight:600; font-size:13px');
+            console.log('%c✅ Usual Acrylics website FULLY UPGRADED! ✨ Cancellation policy updated — deposits are now non-refundable.', 'color:#C77D8A; font-weight:600; font-size:13px');
         }
 
         window.onload = initializeWebsite;
+        window.addEventListener('resize', updateLength);
     </script>
 
     <!-- JSON-LD for better Google results -->
