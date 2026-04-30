@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Usual Acrylics — Solo nail artist in McKinney, TX offering premium Beetles & Jodsone gel polishes. Flawless acrylics, beautiful custom designs, and a truly special experience.">
-    <!-- Open Graph / Social sharing -->
     <meta property="og:title" content="Usual Acrylics • Solo Nail Artist • McKinney, TX">
     <meta property="og:description" content="Premium gel manicures in a warm studio. Book your moment of beauty.">
     <meta property="og:image" content="https://lucky-kleicha-27dcd3.netlify.app/images/og-image.jpg">
@@ -13,11 +12,9 @@
     <title>Usual Acrylics • Solo Nail Artist • McKinney, TX</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@300;400;500;600&amp;display=swap');
-        
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap');
         :root { 
             --burgundy: #5C2E3D; 
             --rose: #C77D8A; 
@@ -25,7 +22,6 @@
             --cream: #FDF6F0; 
             --gold: #D4AF37; 
         }
-        
         body { 
             font-family: 'Inter', system_ui, sans-serif; 
         }
@@ -35,7 +31,6 @@
             letter-spacing: -0.025em; 
             line-height: 1.05; 
         }
-        
         .luxury-shadow { 
             box-shadow: 0 25px 60px -15px rgb(92 46 61 / 0.25), 0 10px 20px -5px rgb(92 46 61 / 0.1); 
         }
@@ -45,7 +40,6 @@
                               radial-gradient(circle at 75% 65%, rgba(199, 125, 138, 0.06) 1px, transparent 2px); 
             background-size: 80px 80px, 120px 120px; 
         }
-        
         .premium-glass { 
             background: rgba(253, 246, 240, 0.92); 
             backdrop-filter: blur(20px); 
@@ -55,7 +49,6 @@
             box-shadow: 0 10px 30px -10px rgb(92 46 61 / 0.15); 
             background: rgba(255,255,255,0.98); 
         }
-        
         .magnetic-btn { 
             position: relative;
             overflow: hidden;
@@ -77,7 +70,6 @@
         .magnetic-btn:hover::after { 
             opacity: 1; 
         }
-        
         .reveal { 
             opacity: 0;
             transform: translateY(40px);
@@ -87,11 +79,9 @@
             opacity: 1;
             transform: translateY(0); 
         }
-        
         .carousel-slide { 
             transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1); 
         }
-        
         .scrollbar-hide::-webkit-scrollbar { 
             display: none; 
         }
@@ -99,13 +89,9 @@
             -ms-overflow-style: none; 
             scrollbar-width: none; 
         }
-        
-        /* Improved mobile menu & spacing */
         #mobile-menu { 
             transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1); 
         }
-        
-        /* Better touch targets & spacing */
         .gallery-card {
             transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
         }
@@ -113,8 +99,6 @@
             transform: translateY(-4px);
             box-shadow: 0 25px 50px -12px rgb(92 46 61 / 0.25);
         }
-        
-        /* Refined hero text scaling */
         .hero-title {
             font-size: 42px;
             line-height: 1.05;
@@ -134,8 +118,6 @@
                 font-size: 88px;
             }
         }
-
-        /* MOBILE-SPECIFIC FIXES */
         @media (max-width: 640px) {
             .gallery-card img {
                 aspect-ratio: 4/5;
@@ -151,13 +133,9 @@
                 font-size: 42px !important;
             }
         }
-
-        /* Ensure no horizontal overflow ever */
         .overflow-safe {
             overflow-x: hidden;
         }
-
-        /* NEW: Floating book button */
         .floating-book {
             animation: float 3s ease-in-out infinite;
         }
@@ -165,8 +143,6 @@
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-12px); }
         }
-
-        /* NEW: FAQ accordion */
         .faq-item {
             transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
         }
@@ -178,18 +154,13 @@
         .faq-item.open .faq-answer {
             max-height: 300px;
         }
-
-        /* Gallery modal image styling */
         #modal-main-image {
             transition: opacity 0.3s ease;
         }
     </style>
 </head>
 <body class="bg-[#FDF6F0] text-[#3D2B2E] floral-bg overflow-x-hidden overflow-safe">
-    <!-- Scroll Progress -->
     <div id="scroll-progress" class="scroll-progress" style="width: 0%"></div>
-
-    <!-- NAV -->
     <nav id="nav" class="bg-white/95 backdrop-blur-xl border-b border-[#E8B4BC]/40 sticky top-0 z-50 transition-all duration-300">
         <div class="max-w-screen-2xl mx-auto">
             <div class="px-6 md:px-8 py-5 md:py-6 flex items-center justify-between">
@@ -202,21 +173,18 @@
                         <span class="font-semibold text-2xl md:text-[29px] tracking-[-1.5px] text-[#C77D8A] -mt-2">Acrylics</span>
                     </div>
                 </div>
-
                 <div class="hidden md:flex items-center gap-x-9 text-sm font-medium tracking-[-0.2px]">
                     <a href="#studio" class="hover:text-[#C77D8A] transition-colors px-3 py-1">Gallery</a>
                     <a href="#experience" class="hover:text-[#C77D8A] transition-colors px-3 py-1">The Experience</a>
                     <a href="#artist" class="hover:text-[#C77D8A] transition-colors px-3 py-1">Meet Miracle</a>
                     <a href="#stories" class="hover:text-[#C77D8A] transition-colors px-3 py-1">Stories</a>
                 </div>
-
                 <div class="flex items-center gap-x-4">
                     <button onclick="showBookingModal()" class="magnetic-btn group px-5 md:px-8 py-3 md:py-[15px] bg-[#5C2E3D] hover:bg-[#3D2B2E] transition-all text-white text-xs md:text-sm font-semibold rounded-3xl flex items-center gap-x-2 shadow-lg shadow-[#5C2E3D]/40 active:scale-[0.985]">
                         <span class="hidden sm:inline">Secure Your Time</span>
                         <span class="sm:hidden">Book</span>
                         <i class="fa-solid fa-calendar-check text-xs group-hover:translate-x-0.5 transition"></i>
                     </button>
-
                     <button id="mobile-menu-btn" class="md:hidden w-11 h-11 flex items-center justify-center text-[#5C2E3D]" onclick="toggleMobileMenu()">
                         <i class="fa-solid fa-bars text-xl"></i>
                     </button>
@@ -224,33 +192,26 @@
             </div>
         </div>
     </nav>
-
-    <!-- HERO -->
     <header class="relative min-h-screen flex items-center pt-4 overflow-hidden">
         <canvas id="hero-canvas" class="absolute inset-0 z-0 opacity-70"></canvas>
         <div class="absolute inset-0 bg-gradient-to-b from-[#FDF6F0]/40 via-transparent to-transparent z-10"></div>
-
         <div class="max-w-screen-2xl mx-auto px-6 md:px-8 relative z-20">
             <div class="max-w-[620px]">
                 <h1 class="hero-title font-bold tracking-[-3.2px] heading-serif text-[#5C2E3D]">
                     Beauty is<br>in your<br><span class="bg-gradient-to-r from-[#C77D8A] via-[#D4AF37] to-[#C77D8A] bg-clip-text text-transparent">hands.</span>
                 </h1>
-                
                 <p class="mt-8 max-w-[440px] text-[17px] md:text-[17.5px] leading-relaxed text-[#6B5559]">
                     I'm a solo nail artist based in McKinney. I use premium gel polishes like Beetles and Jodsone. All my sets are done with great care so your manicure can be a special experience.
                 </p>
-                
                 <div class="mt-12 flex flex-wrap items-center gap-x-4 gap-y-4">
                     <button onclick="document.getElementById('studio').scrollIntoView({ behavior: 'smooth' })" class="magnetic-btn group px-9 py-4 bg-white border border-[#E8B4BC] hover:border-[#C77D8A] hover:bg-[#FDF6F0] transition-all text-[#5C2E3D] font-semibold rounded-3xl flex items-center gap-x-3 shadow-sm text-sm active:scale-[0.985]">
                         <span>Browse the Gallery</span>
                         <i class="fa-solid fa-images text-[#C77D8A]"></i>
                     </button>
-                    
                     <button onclick="document.getElementById('book').scrollIntoView({ behavior: 'smooth' })" class="magnetic-btn group px-9 py-4 bg-[#5C2E3D] hover:bg-black transition-all text-white font-semibold rounded-3xl flex items-center gap-x-3 text-sm shadow-lg shadow-[#5C2E3D]/30 active:scale-[0.985]">
                         <span>Reserve Your Chair</span>
                     </button>
                 </div>
-                
                 <div class="mt-16 flex items-center gap-x-8">
                     <div class="flex -space-x-4">
                         <div class="w-9 h-9 bg-white ring-[2.5px] ring-[#FDF6F0] rounded-full overflow-hidden ring-offset-2 ring-offset-[#FDF6F0]"><img src="images/Allison.jpg" class="object-cover" alt=""></div>
@@ -266,8 +227,6 @@
             </div>
         </div>
     </header>
-
-    <!-- TRUST BAR -->
     <div class="border-b border-[#E8B4BC]/40 py-6 bg-white/60">
         <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
             <div class="flex justify-center items-center opacity-75">
@@ -275,8 +234,6 @@
             </div>
         </div>
     </div>
-
-    <!-- GALLERY (replaces old DESIGN STUDIO) -->
     <section id="studio" class="bg-white py-20 border-y border-[#E8B4BC]/30">
         <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
             <div class="text-center mb-16">
@@ -284,30 +241,20 @@
                 <h2 class="text-5xl md:text-6xl heading-serif tracking-tighter mt-4 text-[#5C2E3D]">Nail Sets Gallery</h2>
                 <p class="text-[#6B5559] mt-6 max-w-lg mx-auto text-lg">36 beautiful sets that showcase premium Beetles &amp; Jodsone gel polishes. Feel free to reference one of my sets if you like what you see and want to try the look out, or you can put a link to something you found online in the notes when checking out.</p>
             </div>
-            
-            <div id="gallery-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 md:gap-6">
-                <!-- Populated dynamically by JavaScript -->
-            </div>
-
-            <!-- NEW: Collapsible gallery toggle (flips rows up/down) -->
+            <div id="gallery-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 md:gap-6"></div>
             <div id="gallery-toggle-container" class="flex justify-center mt-12">
-                <button onclick="toggleGallery()" 
-                        id="gallery-toggle-btn"
-                        class="magnetic-btn px-8 py-4 bg-white border-2 border-[#E8B4BC] hover:border-[#C77D8A] hover:bg-[#FDF6F0] text-[#5C2E3D] font-semibold rounded-3xl flex items-center gap-x-3 shadow-sm transition-all active:scale-[0.98]">
+                <button onclick="toggleGallery()" id="gallery-toggle-btn" class="magnetic-btn px-8 py-4 bg-white border-2 border-[#E8B4BC] hover:border-[#C77D8A] hover:bg-[#FDF6F0] text-[#5C2E3D] font-semibold rounded-3xl flex items-center gap-x-3 shadow-sm transition-all active:scale-[0.98]">
                     <span id="toggle-text">See All 36 Nail Sets</span>
                     <i id="toggle-icon" class="fa-solid fa-chevron-down transition-transform"></i>
                 </button>
             </div>
         </div>
     </section>
-
-    <!-- THE EXPERIENCE -->
     <section id="experience" class="max-w-screen-2xl mx-auto px-6 md:px-8 py-24">
         <div class="text-center mb-16">
             <div class="inline px-5 py-1.5 bg-[#E8B4BC]/10 text-[#C77D8A] text-xs tracking-[2.2px] font-semibold rounded-full mb-4">THE USUAL EXPERIENCE</div>
             <h2 class="text-5xl md:text-6xl heading-serif tracking-tighter text-[#5C2E3D]">More than a manicure.<br>A moment.</h2>
         </div>
-        
         <div class="grid md:grid-cols-3 gap-8">
             <div class="reveal bg-white border border-[#E8B4BC]/40 rounded-3xl p-10 luxury-shadow group">
                 <div class="w-14 h-14 bg-[#E8B4BC]/20 rounded-2xl flex items-center justify-center mb-7 group-hover:bg-[#C77D8A]/20 transition-colors">
@@ -317,7 +264,6 @@
                 <div class="mt-4 text-[#6B5559]">Please arrive 10 minutes early to settle in comfortably. If you arrive 10 minutes late, a $15 late fee applies. If you are 20 minutes late, the appointment will be cancelled.</div>
                 <div class="mt-8 text-xs uppercase tracking-widest text-[#C77D8A]">10 minutes before your service</div>
             </div>
-            
             <div class="reveal bg-white border border-[#E8B4BC]/40 rounded-3xl p-10 luxury-shadow group">
                 <div class="w-14 h-14 bg-[#E8B4BC]/20 rounded-2xl flex items-center justify-center mb-7 group-hover:bg-[#C77D8A]/20 transition-colors">
                     <i class="fa-solid fa-palette text-[#C77D8A] text-3xl"></i>
@@ -326,7 +272,6 @@
                 <div class="mt-4 text-[#6B5559]">Your selected premium gel polish from Beetles or Jodsone is expertly applied for a flawless, durable finish. The entire focus is on creating the perfect set — nothing more, nothing less.</div>
                 <div class="mt-8 text-xs uppercase tracking-widest text-[#C77D8A]">The process takes two hours to complete on average</div>
             </div>
-            
             <div class="reveal bg-white border border-[#E8B4BC]/40 rounded-3xl p-10 luxury-shadow group">
                 <div class="w-14 h-14 bg-[#E8B4BC]/20 rounded-2xl flex items-center justify-center mb-7 group-hover:bg-[#C77D8A]/20 transition-colors">
                     <i class="fa-solid fa-heart text-[#C77D8A] text-3xl"></i>
@@ -337,8 +282,6 @@
             </div>
         </div>
     </section>
-
-    <!-- MEET YOUR ARTIST -->
     <section id="artist" class="py-24 bg-white border-y border-[#E8B4BC]/30">
         <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
             <div class="grid md:grid-cols-12 gap-12 items-center">
@@ -371,8 +314,6 @@
             </div>
         </div>
     </section>
-
-    <!-- TESTIMONIALS -->
     <section id="stories" class="bg-[#5C2E3D] py-24 text-white">
         <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
             <div class="flex justify-between items-end mb-12">
@@ -385,23 +326,18 @@
                     <button onclick="nextTestimonial()" class="w-11 h-11 flex items-center justify-center border border-white/30 hover:bg-white/10 rounded-2xl transition-colors"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
-            
             <div id="testimonial-carousel" class="overflow-hidden">
                 <div id="testimonial-track" class="flex transition-transform duration-500 ease-out" style="transform: translateX(0)"></div>
             </div>
-            
             <div class="flex justify-center gap-x-2 mt-10" id="testimonial-dots"></div>
         </div>
     </section>
-
-    <!-- FAQ -->
     <section class="max-w-screen-2xl mx-auto px-6 md:px-8 py-20 bg-[#FDF6F0]">
         <div class="max-w-2xl mx-auto">
             <div class="text-center mb-12">
                 <div class="inline px-5 py-1.5 bg-[#E8B4BC]/10 text-[#C77D8A] text-xs tracking-[2.2px] font-semibold rounded-full">COMMON QUESTIONS</div>
                 <h2 class="text-5xl heading-serif tracking-tighter text-[#5C2E3D] mt-4">Everything you need to know</h2>
             </div>
-            
             <div class="space-y-4">
                 <div onclick="toggleFaq(this)" class="faq-item border border-[#E8B4BC]/40 rounded-3xl p-6 cursor-pointer bg-white">
                     <div class="flex justify-between items-center">
@@ -410,7 +346,6 @@
                     </div>
                     <div class="faq-answer text-[#6B5559] mt-4">On average, a Signature Nails set takes about 2 hours. This includes consultation, prep, application, and the final reveal.</div>
                 </div>
-                
                 <div onclick="toggleFaq(this)" class="faq-item border border-[#E8B4BC]/40 rounded-3xl p-6 cursor-pointer bg-white">
                     <div class="flex justify-between items-center">
                         <div class="font-semibold text-lg">Do I need to book in advance?</div>
@@ -418,7 +353,6 @@
                     </div>
                     <div class="faq-answer text-[#6B5559] mt-4">Yes. I only take a few clients per week to keep the experience personal and unhurried. Same-day bookings are very rare.</div>
                 </div>
-                
                 <div onclick="toggleFaq(this)" class="faq-item border border-[#E8B4BC]/40 rounded-3xl p-6 cursor-pointer bg-white">
                     <div class="flex justify-between items-center">
                         <div class="font-semibold text-lg">What is the deposit for?</div>
@@ -426,7 +360,6 @@
                     </div>
                     <div class="faq-answer text-[#6B5559] mt-4">The $15 deposit holds your spot and is applied toward your service total. It is non-refundable.</div>
                 </div>
-                
                 <div onclick="toggleFaq(this)" class="faq-item border border-[#E8B4BC]/40 rounded-3xl p-6 cursor-pointer bg-white">
                     <div class="flex justify-between items-center">
                         <div class="font-semibold text-lg">Can I bring a friend?</div>
@@ -434,7 +367,6 @@
                     </div>
                     <div class="faq-answer text-[#6B5559] mt-4">Because I’m a solo artist, I only book one client at a time. This ensures you get my full attention and the calm experience you deserve.</div>
                 </div>
-                
                 <div onclick="toggleFaq(this)" class="faq-item border border-[#E8B4BC]/40 rounded-3xl p-6 cursor-pointer bg-white">
                     <div class="flex justify-between items-center">
                         <div class="font-semibold text-lg">What if I need to cancel?</div>
@@ -445,8 +377,6 @@
             </div>
         </div>
     </section>
-
-    <!-- NAIL CARE GUIDE -->
     <section id="nailcare" class="max-w-screen-2xl mx-auto px-6 md:px-8 py-24 bg-white border-y border-[#E8B4BC]/30">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-16">
@@ -454,9 +384,7 @@
                 <h2 class="text-5xl md:text-6xl heading-serif tracking-tighter text-[#5C2E3D] mt-4">Nail Care Guide</h2>
                 <p class="text-[#6B5559] mt-6 max-w-lg mx-auto text-lg">Your manicure is an investment. Follow these tips to preserve your nails for 2–3 weeks.</p>
             </div>
-            
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Tip 1 -->
                 <div class="reveal bg-[#FDF6F0] border border-[#E8B4BC]/40 rounded-3xl p-8 luxury-shadow group">
                     <div class="w-12 h-12 bg-[#E8B4BC]/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#C77D8A]/20 transition-colors">
                         <i class="fa-solid fa-clock text-[#C77D8A] text-3xl"></i>
@@ -465,8 +393,6 @@
                     <div class="text-[#6B5559]">Avoid submerging your hands in water. No dishwashing, long showers without gloves, or hot baths. Let the gel fully cure.</div>
                     <div class="mt-8 text-xs uppercase tracking-widest text-[#C77D8A]">Critical curing time</div>
                 </div>
-                
-                <!-- Tip 2 -->
                 <div class="reveal bg-[#FDF6F0] border border-[#E8B4BC]/40 rounded-3xl p-8 luxury-shadow group">
                     <div class="w-12 h-12 bg-[#E8B4BC]/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#C77D8A]/20 transition-colors">
                         <i class="fa-solid fa-hand-holding-heart text-[#C77D8A] text-3xl"></i>
@@ -475,8 +401,6 @@
                     <div class="text-[#6B5559]">Apply cuticle oil or balm 2–3 times a day, especially before bed. Healthy cuticles = longer-lasting sets.</div>
                     <div class="mt-8 text-xs uppercase tracking-widest text-[#C77D8A]">Hydration = longevity</div>
                 </div>
-                
-                <!-- Tip 3 -->
                 <div class="reveal bg-[#FDF6F0] border border-[#E8B4BC]/40 rounded-3xl p-8 luxury-shadow group">
                     <div class="w-12 h-12 bg-[#E8B4BC]/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#C77D8A]/20 transition-colors">
                         <i class="fa-solid fa-hands text-[#C77D8A] text-3xl"></i>
@@ -485,8 +409,6 @@
                     <div class="text-[#6B5559]">Use rubber gloves for dishwashing, cleaning, gardening, or any chore involving water or chemicals.</div>
                     <div class="mt-8 text-xs uppercase tracking-widest text-[#C77D8A]">Protect your investment</div>
                 </div>
-                
-                <!-- Tip 4 -->
                 <div class="reveal bg-[#FDF6F0] border border-[#E8B4BC]/40 rounded-3xl p-8 luxury-shadow group">
                     <div class="w-12 h-12 bg-[#E8B4BC]/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#C77D8A]/20 transition-colors">
                         <i class="fa-solid fa-ban text-[#C77D8A] text-3xl"></i>
@@ -495,8 +417,6 @@
                     <div class="text-[#6B5559]">Peeling damages your natural nail bed. If anything does peel, book a professional removal or fillling with me instead.</div>
                     <div class="mt-8 text-xs uppercase tracking-widest text-[#C77D8A]">Be patient</div>
                 </div>
-                
-                <!-- Tip 5 -->
                 <div class="reveal bg-[#FDF6F0] border border-[#E8B4BC]/40 rounded-3xl p-8 luxury-shadow group">
                     <div class="w-12 h-12 bg-[#E8B4BC]/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#C77D8A]/20 transition-colors">
                         <i class="fa-solid fa-hands-holding-circle text-[#C77D8A] text-3xl"></i>
@@ -505,8 +425,6 @@
                     <div class="text-[#6B5559]">Avoid opening cans, scraping stickers, or typing aggressively. Treat your nails like the luxury they are.</div>
                     <div class="mt-8 text-xs uppercase tracking-widest text-[#C77D8A]">Gentle is better</div>
                 </div>
-                
-                <!-- Tip 6 -->
                 <div class="reveal bg-[#FDF6F0] border border-[#E8B4BC]/40 rounded-3xl p-8 luxury-shadow group">
                     <div class="w-12 h-12 bg-[#E8B4BC]/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#C77D8A]/20 transition-colors">
                         <i class="fa-solid fa-calendar-check text-[#C77D8A] text-3xl"></i>
@@ -516,8 +434,6 @@
                     <div class="mt-8 text-xs uppercase tracking-widest text-[#C77D8A]">Maintenance is everything</div>
                 </div>
             </div>
-            
-            <!-- Bonus box -->
             <div class="mt-16 bg-white border border-[#E8B4BC]/40 rounded-3xl p-8 max-w-2xl mx-auto text-center">
                 <div class="flex justify-center mb-4">
                     <i class="fa-solid fa-gem text-[#D4AF37] text-4xl"></i>
@@ -526,23 +442,17 @@
             </div>
         </div>
     </section>
-
-    <!-- BOOKING CTA -->
     <section id="book" class="max-w-screen-2xl mx-auto px-6 md:px-8 py-24">
         <div class="max-w-2xl mx-auto text-center">
             <div class="inline px-5 py-1.5 bg-[#E8B4BC]/10 text-[#C77D8A] text-xs tracking-[2.2px] font-semibold rounded-full mb-4">SECURE YOUR TIME</div>
             <h2 class="text-5xl md:text-6xl heading-serif tracking-tighter text-[#5C2E3D]">Ready to book your appointment?</h2>
-            
             <button onclick="showBookingModal()" class="mt-10 magnetic-btn group px-10 py-5 bg-[#5C2E3D] hover:bg-black transition-all text-white font-semibold rounded-3xl flex items-center gap-x-3 mx-auto text-base shadow-lg shadow-[#5C2E3D]/30 active:scale-[0.985]">
                 <span>Open Booking Form</span>
                 <i class="fa-solid fa-calendar-check group-hover:rotate-12 transition"></i>
             </button>
-            
             <div class="mt-8 text-xs text-[#8B6F73]">Appointments confirmed within 2 hours • $15 non-refundable deposit required</div>
         </div>
     </section>
-
-    <!-- FOOTER -->
     <footer class="bg-[#3D2B2E] text-[#E8B4BC]/90 pt-20 pb-12">
         <div class="max-w-screen-2xl mx-auto px-6 md:px-8 grid md:grid-cols-12 gap-y-12">
             <div class="md:col-span-5">
@@ -553,13 +463,11 @@
                     <span class="font-bold text-3xl text-white tracking-tighter heading-serif">Usual Acrylics</span>
                 </div>
                 <div class="max-w-xs text-sm leading-relaxed">It's a small nail business, but I'm big on intention. Everything I do is done with care.</div>
-                
                 <div class="mt-10 flex gap-x-5 text-2xl">
                     <a href="https://www.instagram.com/usualacrylicss?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.tiktok.com/@uknowacrylics" class="hover:text-white transition"><i class="fa-brands fa-tiktok"></i></a>
                 </div>
             </div>
-            
             <div class="md:col-span-3 text-sm">
                 <div class="font-semibold text-white mb-5 tracking-wider text-xs">STUDIO</div>
                 <div class="space-y-3">
@@ -570,7 +478,6 @@
                     <div>Sat-Sun 12:30pm–10pm</div>
                 </div>
             </div>
-            
             <div class="md:col-span-4">
                 <div class="font-semibold text-white mb-5 tracking-wider text-xs">QUICK LINKS</div>
                 <div class="grid grid-cols-2 gap-y-3 text-sm">
@@ -580,7 +487,6 @@
                     <a href="#stories" class="hover:text-white transition">Stories</a>
                     <a href="#nailcare" class="hover:text-white transition">Nail Care Guide</a>
                 </div>
-                
                 <div class="mt-12 pt-6 border-t border-white/20 text-xs flex items-center gap-x-4">
                     <div>© 2026 Usual Acrylics</div>
                     <div class="flex-1 h-px bg-white/20"></div>
@@ -589,8 +495,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Booking Modal -->
     <div id="booking-modal" onclick="if (event.target.id === 'booking-modal') hideBookingModal()" class="hidden fixed inset-0 bg-black/70 z-[100] flex items-end md:items-center justify-center">
         <div onclick="event.stopImmediatePropagation()" class="bg-white w-full md:w-[520px] md:rounded-3xl rounded-t-3xl p-8 max-h-[92vh] overflow-auto">
             <div class="flex justify-between items-center mb-6">
@@ -600,19 +504,15 @@
                 </div>
                 <button onclick="hideBookingModal()" class="text-4xl leading-none text-[#8B6F73] hover:text-black">&times;</button>
             </div>
-
             <div class="flex items-center gap-x-2 mb-8">
                 <div class="flex-1 h-1 bg-[#E8B4BC]/30 rounded-full overflow-hidden">
                     <div id="modal-booking-progress" class="h-1 bg-[#C77D8A] transition-all" style="width: 25%"></div>
                 </div>
                 <div class="text-xs font-medium text-[#8B6F73]">Step <span id="modal-step-number">1</span> of 4</div>
             </div>
-            
             <form id="modal-booking-form">
-                <!-- Step 1: Choose Service -->
                 <div id="modal-booking-step-1">
                     <div class="uppercase tracking-widest text-xs font-semibold mb-3 text-[#C77D8A]">CHOOSE YOUR SERVICE</div>
-                    
                     <div class="space-y-3">
                         <label class="flex items-center gap-x-4 border border-[#E8B4BC]/50 hover:border-[#C77D8A] transition-colors rounded-3xl p-5 cursor-pointer has-[:checked]:border-[#C77D8A] has-[:checked]:bg-[#FDF6F0]">
                             <input type="radio" name="service" value="Signature Nails — starting at $35" checked class="accent-[#C77D8A] scale-110">
@@ -625,7 +525,6 @@
                             </div>
                             <div class="font-semibold">starting at $35</div>
                         </label>
-                        
                         <label class="flex items-center gap-x-4 border border-[#E8B4BC]/50 hover:border-[#C77D8A] transition-colors rounded-3xl p-5 cursor-pointer has-[:checked]:border-[#C77D8A] has-[:checked]:bg-[#FDF6F0]">
                             <input type="radio" name="service" value="Usual Nails — $25" class="accent-[#C77D8A] scale-110">
                             <div class="flex-1">
@@ -634,7 +533,6 @@
                             </div>
                             <div class="font-semibold">$25</div>
                         </label>
-                        
                         <label class="flex items-center gap-x-4 border border-[#E8B4BC]/50 hover:border-[#C77D8A] transition-colors rounded-3xl p-5 cursor-pointer has-[:checked]:border-[#C77D8A] has-[:checked]:bg-[#FDF6F0]">
                             <input type="radio" name="service" value="Nail Art & Design — $95+" class="accent-[#C77D8A] scale-110">
                             <div class="flex-1">
@@ -644,14 +542,10 @@
                             <div class="font-semibold">$95+</div>
                         </label>
                     </div>
-                    
                     <button type="button" onclick="nextBookingModalStep()" class="mt-10 w-full py-4 bg-[#5C2E3D] text-white font-semibold rounded-3xl">Continue to Date &amp; Time</button>
                 </div>
-                
-                <!-- Step 2: Date & Time -->
                 <div id="modal-booking-step-2" class="hidden">
                     <div class="uppercase tracking-widest text-xs font-semibold mb-3 text-[#C77D8A]">PICK YOUR DATE &amp; TIME</div>
-                    
                     <div class="grid grid-cols-2 gap-6 mb-6">
                         <div>
                             <label class="block text-xs font-medium mb-1.5">DATE</label>
@@ -659,22 +553,16 @@
                         </div>
                         <div>
                             <label class="block text-xs font-medium mb-1.5">TIME</label>
-                            <select id="modal-booking-time" class="w-full border border-[#E8B4BC]/60 focus:border-[#C77D8A] px-5 py-4 rounded-3xl text-sm bg-white">
-                                <!-- Dynamically populated by JavaScript based on day of week + current time -->
-                            </select>
+                            <select id="modal-booking-time" class="w-full border border-[#E8B4BC]/60 focus:border-[#C77D8A] px-5 py-4 rounded-3xl text-sm bg-white"></select>
                         </div>
                     </div>
-                    
                     <div class="flex gap-4">
                         <button type="button" onclick="prevBookingModalStep()" class="flex-1 py-4 border border-[#5C2E3D] text-[#5C2E3D] font-semibold rounded-3xl">Back</button>
                         <button type="button" onclick="nextBookingModalStep()" class="flex-1 py-4 bg-[#5C2E3D] text-white font-semibold rounded-3xl">Continue to Details</button>
                     </div>
                 </div>
-                
-                <!-- Step 3: Your Details -->
                 <div id="modal-booking-step-3" class="hidden">
                     <div class="uppercase tracking-widest text-xs font-semibold mb-3 text-[#C77D8A]">YOUR DETAILS</div>
-                    
                     <div class="grid grid-cols-2 gap-6 mb-6">
                         <div>
                             <label class="block text-xs font-medium mb-1.5">FULL NAME</label>
@@ -685,44 +573,34 @@
                             <input type="email" id="modal-client-email" placeholder="your@email.com" class="w-full border border-[#E8B4BC]/60 focus:border-[#C77D8A] px-5 py-4 rounded-3xl text-sm">
                         </div>
                     </div>
-                    
                     <div>
                         <label class="block text-xs font-medium mb-1.5">ANY NOTES FOR YOUR ARTIST?</label>
                         <textarea id="modal-client-notes" class="w-full border border-[#E8B4BC]/60 focus:border-[#C77D8A] px-5 py-4 rounded-3xl text-sm h-[110px] resize-y" placeholder="Describe your vision or click the Instagram icon in the footer to open my Instagram and send your reference image(s)..."></textarea>
                     </div>
-                    
                     <div class="flex gap-4 mt-8">
                         <button type="button" onclick="prevBookingModalStep()" class="flex-1 py-4 border border-[#5C2E3D] text-[#5C2E3D] font-semibold rounded-3xl">Back</button>
                         <button type="button" onclick="nextBookingModalStep()" class="flex-1 py-4 bg-[#5C2E3D] text-white font-semibold rounded-3xl">CONFIRM</button>
                     </div>
                 </div>
-                
-                <!-- Step 4: Order Summary -->
                 <div id="modal-booking-step-4" class="hidden">
                     <div class="uppercase tracking-widest text-xs font-semibold mb-3 text-[#C77D8A]">ORDER SUMMARY</div>
-                    
                     <div id="order-summary-content" class="bg-[#FDF6F0] border border-[#E8B4BC]/40 rounded-3xl p-6 mb-6 text-sm"></div>
-                    
                     <div class="flex justify-between items-baseline mb-2">
                         <div class="text-base font-semibold">Total due at appointment</div>
                         <div id="summary-total" class="text-3xl font-bold text-[#5C2E3D]"></div>
                     </div>
                     <div class="text-xs text-[#8B6F73] mb-8">$15 non-refundable deposit (applied toward your service)</div>
-                    
                     <div class="flex gap-4">
                         <button type="button" onclick="prevBookingModalStep()" class="flex-1 py-4 border border-[#5C2E3D] text-[#5C2E3D] font-semibold rounded-3xl">Back</button>
                         <button type="button" onclick="proceedToCashAppPayment()" class="flex-1 py-4 bg-[#5C2E3D] text-white font-semibold rounded-3xl flex items-center justify-center gap-x-2">
                             PAY VIA CASH APP <i class="fa-solid fa-arrow-right"></i>
                         </button>
                     </div>
-                    
                     <div class="text-center mt-6 text-xs text-[#8B6F73]">$15 non-refundable deposit • Confirmation email sent immediately</div>
                 </div>
             </form>
         </div>
     </div>
-
-    <!-- Gallery Modal -->
     <div id="gallery-modal" onclick="if (event.target.id === 'gallery-modal') closeGalleryModal()" class="hidden fixed inset-0 bg-black/90 z-[110] flex items-center justify-center p-4">
         <div onclick="event.stopImmediatePropagation()" class="max-w-5xl w-full bg-white rounded-3xl overflow-hidden flex flex-col max-h-[95vh]">
             <div class="px-6 py-4 border-b flex items-center justify-between bg-white">
@@ -731,17 +609,12 @@
             </div>
             <div class="flex-1 flex items-center justify-center p-8 bg-[#FDF6F0] relative" id="modal-image-wrapper">
                 <img id="modal-main-image" src="" class="max-h-[70vh] w-auto max-w-full object-contain rounded-3xl shadow-2xl" alt="">
-                <!-- Arrows are always in DOM but will be hidden/shown via JS for single-image sets -->
                 <button onclick="prevModalImage()" class="absolute left-6 md:left-12 bg-white shadow-xl hover:bg-[#FDF6F0] w-12 h-12 rounded-2xl flex items-center justify-center text-3xl text-[#5C2E3D] active:scale-95">‹</button>
                 <button onclick="nextModalImage()" class="absolute right-6 md:right-12 bg-white shadow-xl hover:bg-[#FDF6F0] w-12 h-12 rounded-2xl flex items-center justify-center text-3xl text-[#5C2E3D] active:scale-95">›</button>
             </div>
-            <div class="px-8 py-5 text-center text-sm text-[#8B6F73] flex items-center justify-center gap-x-2" id="modal-image-info">
-                <!-- Populated by JS -->
-            </div>
+            <div class="px-8 py-5 text-center text-sm text-[#8B6F73] flex items-center justify-center gap-x-2" id="modal-image-info"></div>
         </div>
     </div>
-
-    <!-- Privacy Policy Modal -->
     <div id="privacy-modal" onclick="if (event.target.id === 'privacy-modal') hidePrivacyModal()" class="hidden fixed inset-0 bg-black/70 z-[100] flex items-end md:items-center justify-center">
         <div onclick="event.stopImmediatePropagation()" class="bg-white w-full md:w-[560px] md:rounded-3xl rounded-t-3xl p-8 max-h-[85vh] overflow-auto">
             <div class="flex justify-between items-center mb-6">
@@ -751,10 +624,8 @@
                 </div>
                 <button onclick="hidePrivacyModal()" class="text-4xl leading-none text-[#8B6F73] hover:text-black">&times;</button>
             </div>
-
             <div class="space-y-6 text-[13.5px] leading-relaxed text-[#3D2B2E]">
                 <p>At Usual Acrylics, your privacy matters. We will collect only what’s necessary to deliver you a beautiful and personalized experience.</p>
-                
                 <div>
                     <div class="font-semibold text-sm mb-1.5 text-[#5C2E3D]">What We Collect</div>
                     <ul class="list-disc pl-5 space-y-1 text-sm">
@@ -763,27 +634,21 @@
                         <li>Payment confirmation via Cash App</li>
                     </ul>
                 </div>
-                
                 <div>
                     <div class="font-semibold text-sm mb-1.5 text-[#5C2E3D]">How We Use Your Information</div>
                     <p class="text-sm">To confirm your booking, send reminders, and make sure every detail of your visit is perfect. We use EmailJS to deliver confirmations. EmailJS is a trusted, secure service. We do not sell, rent, or share your information with anyone else.</p>
                 </div>
-                
                 <div>
                     <div class="font-semibold text-sm mb-1.5 text-[#5C2E3D]">Your Rights &amp; Choices</div>
                     <p class="text-sm">You can request to view, update, or delete your information anytime. Deposits are non-refundable once paid. Please provide at least 48 hours notice if you need to cancel or reschedule. Just reply to your confirmation email or message me on Instagram.</p>
                 </div>
-                
                 <div class="pt-6 border-t border-[#E8B4BC]/30 text-xs text-[#8B6F73]">
                     Last updated: April 2026 • This policy applies to all visits and bookings at 1701 N Church St, McKinney, TX.
                 </div>
             </div>
-            
             <button onclick="hidePrivacyModal()" class="mt-10 w-full py-[17px] bg-[#5C2E3D] hover:bg-black transition-colors text-white font-semibold rounded-3xl text-sm">I UNDERSTAND — CLOSE</button>
         </div>
     </div>
-
-    <!-- Toast -->
     <div id="success-toast" class="hidden fixed bottom-8 right-8 bg-[#5C2E3D] text-white px-6 py-4 rounded-3xl shadow-2xl flex items-center gap-x-3 z-[200]">
         <i class="fa-solid fa-check-circle text-[#E8B4BC]"></i>
         <div>
@@ -791,8 +656,6 @@
             <div class="text-xs opacity-80">We can’t wait to see you</div>
         </div>
     </div>
-
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden fixed inset-0 bg-black/70 z-[90] md:hidden">
         <div class="bg-white w-4/5 h-full p-8 ml-auto">
             <div class="flex justify-between mb-12">
@@ -814,27 +677,19 @@
             </div>
         </div>
     </div>
-
-    <!-- NEW: Floating mobile book button -->
     <button id="floating-book-btn" onclick="showBookingModal()" class="md:hidden fixed bottom-6 right-6 bg-[#5C2E3D] text-white shadow-2xl shadow-[#5C2E3D]/40 w-14 h-14 rounded-3xl flex items-center justify-center text-2xl z-[999] floating-book">
         <i class="fa-solid fa-calendar-check"></i>
     </button>
-
     <script>
-        // ==================== EMAILJS CONFIGURATION ====================
         const EMAILJS_SERVICE_ID = 'service_qbjpme3';
         const EMAILJS_TEMPLATE_ID = 'template_cv3cpzr';
         const EMAILJS_PUBLIC_KEY = 'i3p-yGQWOoIL4zHHt';
-
         (function() {
             if (typeof emailjs !== 'undefined') {
                 emailjs.init(EMAILJS_PUBLIC_KEY);
             }
         })();
-
-        // ==================== GALLERY DATA (36 main sets with YOUR local PNG images) ====================
         let galleryData = [];
-
         function generateGalleryData() {
             galleryData = [];
             for (let i = 1; i <= 36; i++) {
@@ -842,8 +697,6 @@
                 const num = i.toString().padStart(2, '0');
                 const mainImage = `images/${num}.png`;
                 images.push(mainImage);
-
-                // Add subimages per your exact specification (now as PNG)
                 if ([19,24,25,26,30,34,35,36].includes(i)) {
                     images.push(`images/${num}-1.png`);
                 } 
@@ -856,7 +709,6 @@
                     images.push(`images/${num}-2.png`);
                     images.push(`images/${num}-3.png`);
                 }
-
                 galleryData.push({
                     id: i,
                     title: `Signature Set ${i}`,
@@ -864,44 +716,34 @@
                 });
             }
         }
-
-        // ==================== STATE VARIABLES ====================
         let currentSetImages = [];
         let currentModalImageIdx = 0;
         let currentTestimonial = 0;
         let testimonialInterval;
         let currentModalBookingStep = 1;
         let instagramPromptedForArt = false;
-
-        // NEW: Gallery collapse state
         let galleryExpanded = false;
         const INITIAL_GALLERY_ITEMS = 12;
-
         const testimonials = [
             { quote: "", name: "", title: "", rating: 5, avatar: "" },
             { quote: "", name: "", title: "", rating: 5, avatar: "" },
             { quote: "", name: "", title: "", rating: 5, avatar: "" },
             { quote: "", name: "", title: "", rating: 5, avatar: "" }
         ];
-
-        // ==================== DYNAMIC BOOKING TIME LOGIC ====================
         const AVAILABLE_SLOTS = {
             weekday: ["4:40 PM", "5:00 PM"],
             weekend: ["12:30 PM", "2:00 PM", "3:30 PM", "7:30 PM"]
         };
-
         function getDayType(dateStr) {
             const date = new Date(dateStr + 'T00:00:00');
             const day = date.getDay();
             return (day === 0 || day === 6) ? 'weekend' : 'weekday';
         }
-
         function isToday(dateStr) {
             const today = new Date();
             const selectedDate = new Date(dateStr);
             return today.toDateString() === selectedDate.toDateString();
         }
-
         function parseTimeToMinutes(timeStr) {
             const [time, period] = timeStr.split(' ');
             let [hours, minutes] = time.split(':').map(Number);
@@ -909,24 +751,19 @@
             if (period.toUpperCase() === 'AM' && hours === 12) hours = 0;
             return hours * 60 + minutes;
         }
-
         function updateAvailableTimes() {
             const dateInput = document.getElementById('modal-booking-date');
             const timeSelect = document.getElementById('modal-booking-time');
             if (!dateInput || !timeSelect) return;
-
             const dateStr = dateInput.value;
             if (!dateStr) return;
-
             const dayType = getDayType(dateStr);
             let slots = [...AVAILABLE_SLOTS[dayType]];
-
             if (isToday(dateStr)) {
                 const now = new Date();
                 const currentMinutes = now.getHours() * 60 + now.getMinutes();
                 slots = slots.filter(slot => parseTimeToMinutes(slot) > currentMinutes);
             }
-
             timeSelect.innerHTML = '';
             if (slots.length === 0) {
                 const option = document.createElement('option');
@@ -945,7 +782,6 @@
                 });
             }
         }
-
         function setMinDate() {
             const dateInput = document.getElementById('modal-booking-date');
             if (!dateInput) return;
@@ -955,12 +791,7 @@
             const day = String(today.getDate()).padStart(2, '0');
             dateInput.min = `${year}-${month}-${day}`;
         }
-
-        // ==================== UTILITY FUNCTIONS ====================
-        function initTailwind() {
-            // Tailwind already loaded via CDN
-        }
-
+        function initTailwind() {}
         function initScrollProgress() {
             const progress = document.getElementById('scroll-progress');
             window.addEventListener('scroll', () => {
@@ -970,7 +801,6 @@
                 progress.style.width = Math.min(scrollPercent, 100) + '%';
             });
         }
-
         function initNav() {
             const nav = document.getElementById('nav');
             window.addEventListener('scroll', () => {
@@ -981,20 +811,16 @@
                 }
             });
         }
-
-        // Hero canvas animation
         let canvas, ctx, petals = [];
         function initHeroCanvas() {
             canvas = document.getElementById('hero-canvas');
             ctx = canvas.getContext('2d', { alpha: true });
-            
             function resizeCanvas() {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight * 0.95;
             }
             resizeCanvas();
             window.addEventListener('resize', resizeCanvas);
-            
             class Petal {
                 constructor() { this.reset(); }
                 reset() {
@@ -1025,9 +851,7 @@
                     ctx.restore();
                 }
             }
-            
             for (let i = 0; i < 28; i++) petals.push(new Petal());
-            
             function animate() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 petals.forEach(p => { p.update(); p.draw(); });
@@ -1035,16 +859,13 @@
             }
             animate();
         }
-
         function renderGallery() {
             const grid = document.getElementById('gallery-grid');
             if (!grid) return;
             grid.innerHTML = '';
-            
             const itemsToShow = galleryExpanded 
                 ? galleryData 
                 : galleryData.slice(0, INITIAL_GALLERY_ITEMS);
-            
             itemsToShow.forEach(set => {
                 const card = document.createElement('div');
                 card.className = `gallery-card group cursor-pointer overflow-hidden rounded-3xl border border-[#E8B4BC]/30 hover:border-[#C77D8A] transition-all duration-300`;
@@ -1061,14 +882,11 @@
                 grid.appendChild(card);
             });
         }
-
         function toggleGallery() {
             galleryExpanded = !galleryExpanded;
             renderGallery();
-            
             const btnText = document.getElementById('toggle-text');
             const icon = document.getElementById('toggle-icon');
-            
             if (galleryExpanded) {
                 btnText.textContent = 'Show Less';
                 icon.classList.remove('fa-chevron-down');
@@ -1079,7 +897,6 @@
                 icon.classList.add('fa-chevron-down');
             }
         }
-
         function openGalleryModal(id) {
             const set = galleryData.find(s => s.id === id);
             if (!set || !set.images.length) return;
@@ -1091,33 +908,24 @@
             modal.classList.add('flex');
             showModalImage();
         }
-
         function closeGalleryModal() {
             const modal = document.getElementById('gallery-modal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
             currentSetImages = [];
         }
-
-        // UPDATED: showModalImage now hides arrows + counter for single-image sets
         function showModalImage() {
             const imgEl = document.getElementById('modal-main-image');
             imgEl.style.opacity = '0';
-            
             setTimeout(() => {
                 imgEl.src = currentSetImages[currentModalImageIdx];
                 imgEl.style.opacity = '1';
-                
                 const infoEl = document.getElementById('modal-image-info');
                 const hasMultiple = currentSetImages.length > 1;
-                
-                // Hide/show arrows
                 const arrows = document.querySelectorAll('#modal-image-wrapper button');
                 arrows.forEach(arrow => {
                     arrow.style.display = hasMultiple ? 'flex' : 'none';
                 });
-                
-                // Hide/show counter
                 if (hasMultiple) {
                     infoEl.innerHTML = `<span class="font-medium">${currentModalImageIdx + 1} / ${currentSetImages.length}</span>`;
                     infoEl.style.display = 'flex';
@@ -1127,19 +935,16 @@
                 }
             }, 150);
         }
-
         function nextModalImage() {
             if (currentSetImages.length < 2) return;
             currentModalImageIdx = (currentModalImageIdx + 1) % currentSetImages.length;
             showModalImage();
         }
-
         function prevModalImage() {
             if (currentSetImages.length < 2) return;
             currentModalImageIdx = (currentModalImageIdx - 1 + currentSetImages.length) % currentSetImages.length;
             showModalImage();
         }
-
         function renderTestimonials() {
             const track = document.getElementById('testimonial-track');
             track.innerHTML = '';
@@ -1161,7 +966,6 @@
                 `;
                 track.appendChild(slide);
             });
-            
             const dotsContainer = document.getElementById('testimonial-dots');
             dotsContainer.innerHTML = '';
             testimonials.forEach((_, i) => {
@@ -1171,40 +975,34 @@
                 dotsContainer.appendChild(dot);
             });
         }
-
         function startTestimonialTimer() {
             if (testimonialInterval) clearInterval(testimonialInterval);
             testimonialInterval = setInterval(() => {
                 if (!document.hidden) nextTestimonial();
             }, 8500);
         }
-
         function initTestimonialCarousel() {
             renderTestimonials();
             startTestimonialTimer();
         }
-
         function nextTestimonial() {
             currentTestimonial = (currentTestimonial + 1) % testimonials.length;
             document.getElementById('testimonial-track').style.transform = `translateX(-${currentTestimonial * 100}%)`;
             updateTestimonialDots();
             startTestimonialTimer();
         }
-
         function prevTestimonial() {
             currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
             document.getElementById('testimonial-track').style.transform = `translateX(-${currentTestimonial * 100}%)`;
             updateTestimonialDots();
             startTestimonialTimer();
         }
-
         function goToTestimonial(index) {
             currentTestimonial = index;
             document.getElementById('testimonial-track').style.transform = `translateX(-${currentTestimonial * 100}%)`;
             updateTestimonialDots();
             startTestimonialTimer();
         }
-
         function updateTestimonialDots() {
             const dots = document.querySelectorAll('#testimonial-dots button');
             dots.forEach((dot, i) => {
@@ -1217,7 +1015,6 @@
                 }
             });
         }
-
         function initScrollReveal() {
             const reveals = document.querySelectorAll('.reveal');
             const observer = new IntersectionObserver((entries) => {
@@ -1230,7 +1027,6 @@
             }, { threshold: 0.2 });
             reveals.forEach(el => observer.observe(el));
         }
-
         function showToast(message) {
             const toast = document.getElementById('success-toast');
             toast.innerHTML = `
@@ -1251,12 +1047,10 @@
                 }, 500);
             }, 4000);
         }
-
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         }
-
         function initKeyboardShortcuts() {
             document.addEventListener('keydown', function(e) {
                 if (e.key.toLowerCase() === 'c' && document.activeElement.tagName === 'BODY') {
@@ -1265,96 +1059,71 @@
                 if (e.key === 'Escape') {
                     const bookingModal = document.getElementById('booking-modal');
                     if (bookingModal && bookingModal.classList.contains('flex')) hideBookingModal();
-                    
                     const privacyModal = document.getElementById('privacy-modal');
                     if (privacyModal && privacyModal.classList.contains('flex')) hidePrivacyModal();
-                    
                     const galleryModal = document.getElementById('gallery-modal');
                     if (galleryModal && galleryModal.classList.contains('flex')) closeGalleryModal();
-                    
                     const mobileMenu = document.getElementById('mobile-menu');
                     if (mobileMenu && !mobileMenu.classList.contains('hidden')) toggleMobileMenu();
                 }
             });
         }
-
         function showPrivacyModal() {
             const modal = document.getElementById('privacy-modal');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
         }
-
         function hidePrivacyModal() {
             const modal = document.getElementById('privacy-modal');
             modal.classList.remove('flex');
             modal.classList.add('hidden');
         }
-
         function toggleFaq(el) {
             el.classList.toggle('open');
             const icon = el.querySelector('i');
             icon.style.transform = el.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0)';
         }
-
-        // ==================== NAIL ART REFERENCE PROMPT (NEW BEHAVIOR) ====================
         function promptForNailArtReference() {
             const serviceEl = document.querySelector('#modal-booking-form input[name="service"]:checked');
             if (!serviceEl || !serviceEl.value.includes('Nail Art & Design')) return;
-            
             if (!instagramPromptedForArt) {
                 instagramPromptedForArt = true;
-                
-                // Open Instagram profile so customer can DM reference image
                 window.open('https://www.instagram.com/usualacrylicss', '_blank');
-                
-                // Show helpful toast
                 showToast('📸 Instagram opened! Send your reference image(s) to @usualacrylicss via DM, then return here to pay the deposit.');
             }
         }
-
         function setupNotesReferencePrompt() {
             const notesTextarea = document.getElementById('modal-client-notes');
             if (!notesTextarea) return;
-            
-            // Trigger on click OR focus (covers both mobile tap and desktop click)
             notesTextarea.addEventListener('click', promptForNailArtReference);
             notesTextarea.addEventListener('focus', promptForNailArtReference);
         }
-
-        // ==================== BOOKING MODAL LOGIC ====================
         function showBookingModal() {
             const modal = document.getElementById('booking-modal');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-            
             const floatingBtn = document.getElementById('floating-book-btn');
             if (floatingBtn) floatingBtn.classList.add('hidden');
-            
             currentModalBookingStep = 1;
-            instagramPromptedForArt = false; // reset for each new booking
-            
+            instagramPromptedForArt = false;
             document.getElementById('modal-booking-step-1').classList.remove('hidden');
             document.getElementById('modal-booking-step-2').classList.add('hidden');
             document.getElementById('modal-booking-step-3').classList.add('hidden');
             document.getElementById('modal-booking-step-4').classList.add('hidden');
             document.getElementById('modal-booking-progress').style.width = '25%';
             document.getElementById('modal-step-number').innerHTML = '1';
-
             setTimeout(() => {
                 updateAvailableTimes();
-                setupNotesReferencePrompt(); // attach listener every time modal opens
+                setupNotesReferencePrompt();
             }, 10);
         }
-
         function hideBookingModal() {
             const modal = document.getElementById('booking-modal');
             modal.classList.remove('flex');
             modal.classList.add('hidden');
-            
             const floatingBtn = document.getElementById('floating-book-btn');
             if (floatingBtn) floatingBtn.classList.remove('hidden');
         }
-
         function nextBookingModalStep() {
             if (currentModalBookingStep === 1) {
                 document.getElementById('modal-booking-step-1').classList.add('hidden');
@@ -1377,7 +1146,6 @@
                 renderOrderSummary();
             }
         }
-
         function prevBookingModalStep() {
             if (currentModalBookingStep === 2) {
                 document.getElementById('modal-booking-step-2').classList.add('hidden');
@@ -1399,7 +1167,6 @@
                 document.getElementById('modal-step-number').innerHTML = '3';
             }
         }
-
         function renderOrderSummary() {
             const container = document.getElementById('order-summary-content');
             const serviceEl = document.querySelector('#modal-booking-form input[name="service"]:checked');
@@ -1407,11 +1174,9 @@
             let servicePrice = 35;
             if (serviceText.includes('$25')) servicePrice = 25;
             else if (serviceText.includes('$95')) servicePrice = 95;
-            
             const date = document.getElementById('modal-booking-date').value || 'TBD';
             const time = document.getElementById('modal-booking-time').value || 'TBD';
             const name = document.getElementById('modal-client-name').value.trim() || 'Client';
-
             const html = `
                 <div class="flex justify-between py-4 border-b">
                     <div class="font-medium">${serviceText}</div>
@@ -1425,28 +1190,23 @@
             container.innerHTML = html;
             document.getElementById('summary-total').innerHTML = `$${servicePrice + 15}`;
         }
-
         function proceedToCashAppPayment() {
             const name = document.getElementById('modal-client-name').value.trim() || 'Client';
             const clientEmail = document.getElementById('modal-client-email').value.trim() || '';
             const notes = document.getElementById('modal-client-notes').value.trim() || 'No notes';
             const date = document.getElementById('modal-booking-date').value || 'TBD';
             const time = document.getElementById('modal-booking-time').value || 'TBD';
-
             const serviceEl = document.querySelector('#modal-booking-form input[name="service"]:checked');
             const service = serviceEl ? serviceEl.value : 'Signature Nails — starting at $35';
             let baseTotal = 35;
             if (service.includes('$25')) baseTotal = 25;
             else if (service.includes('$95')) baseTotal = 95;
             const total = baseTotal + 15;
-
             const isNailArt = service.includes('Nail Art & Design');
             const nailArtNote = isNailArt 
                 ? '\n\n🚨 NAIL ART & DESIGN BOOKING\nClient clicked the notes field and was automatically sent to Instagram to send reference image(s) to @usualacrylicss.\nPlease check your recent DMs for the reference photo(s)!' 
                 : '';
-
             const fullMessage = `Service: ${service}\nNotes: ${notes}${nailArtNote}\n\nPreferred Date/Time: ${date} at ${time}\nTotal Due: $${total}\n\nNote: $15 deposit is non-refundable.`;
-
             const templateParams = {
                 to_email: 'Miracleharrell9108@gmail.com',
                 name: name,
@@ -1455,14 +1215,11 @@
                 message: fullMessage,
                 total: total
             };
-
             const cashappUsername = '$Miracleharrell1';
             window.open(`https://cash.app/${cashappUsername}/${Math.round(total)}`, '_blank');
-
             emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
                 .then(() => {
                     hideBookingModal();
-
                     const successHTML = `
                         <div class="fixed inset-0 bg-black/80 z-[300] flex items-center justify-center p-4" onclick="if(event.target === this) this.remove()">
                             <div onclick="event.stopImmediatePropagation()" class="bg-white rounded-3xl max-w-md w-full p-10 text-center">
@@ -1470,7 +1227,6 @@
                                     <i class="fa-solid fa-check text-emerald-600 text-5xl"></i>
                                 </div>
                                 <div class="text-3xl font-semibold tracking-tight">Appointment secured!</div>
-                                
                                 <div class="mt-8 text-left bg-[#FDF6F0] p-6 rounded-2xl border border-[#E8B4BC]/40">
                                     <div class="flex justify-between text-sm py-3 border-b">
                                         <div class="font-medium">${service}</div>
@@ -1482,7 +1238,6 @@
                                     </div>
                                     <div class="text-xs text-[#8B6F73] mt-3">Note: $15 deposit is non-refundable</div>
                                 </div>
-                                
                                 <button onclick="this.closest('.fixed').remove()" class="mt-10 w-full py-4 bg-[#5C2E3D] text-white font-semibold rounded-3xl">RETURN TO HOME</button>
                             </div>
                         </div>
@@ -1495,7 +1250,6 @@
                     hideBookingModal();
                 });
         }
-
         function initializeWebsite() {
             initTailwind();
             initScrollProgress();
@@ -1504,24 +1258,18 @@
             initTestimonialCarousel();
             initScrollReveal();
             initKeyboardShortcuts();
-            
             generateGalleryData();
             renderGallery();
-
             setMinDate();
             const dateInput = document.getElementById('modal-booking-date');
             if (dateInput) {
                 dateInput.addEventListener('change', updateAvailableTimes);
                 updateAvailableTimes();
             }
-            
             console.log('%c✅ Usual Acrylics website updated — Nail Care Guide fully integrated ✨', 'color:#C77D8A; font-weight:600; font-size:13px');
         }
-
         window.onload = initializeWebsite;
     </script>
-
-    <!-- JSON-LD for better Google results -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
