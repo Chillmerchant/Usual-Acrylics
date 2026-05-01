@@ -725,10 +725,10 @@
         let galleryExpanded = false;
         const INITIAL_GALLERY_ITEMS = 12;
         const testimonials = [
-            { quote: "", name: "", title: "", rating: 5, avatar: "" },
-            { quote: "", name: "", title: "", rating: 5, avatar: "" },
-            { quote: "", name: "", title: "", rating: 5, avatar: "" },
-            { quote: "", name: "", title: "", rating: 5, avatar: "" }
+            { quote: "I was nervouse that a manicure wouldn't survive the HVAC shop, but Miracle proved me wrong. I'm constantly working with tools and metal all day, and this set still looks brand new after a full week of lab. She listened when I said I needed something strong but cute. I literally walked over from the dorms for my appointment. Worth every penny! I've already booked my fill!", name: "Brittany Ellis", title: "HVAC", rating: 5, avatar: "images/brittanyEllis.jpg" },
+            { quote: "Between CNA clinicals, constant glove changes, and hand washing all day, I didn't think anything would hold up. Miracle's gel polish lasted through an entire week of rotation with zero chips or lifting. She made sure the length was practical for patient care but still looked really nice. The $15 deposit made it easy to book between classes. I'm a total regular now!", name: "Nicole Vargas", title: "CNA", rating: 5, avatar: "images/nicoleVargas.jpg" },
+            { quote: "I'm in the CMA program so my nails have to look professional for clinicals but survive nonstop sanitizing and patient care. Miracle got the shape and polish exactly right, my set from last month still looks fresh even after back-to-back shifts. The calm and no-rush vibe there was exactly what I needed after a long day at CMA. Booking my next appointment this week!", name: "Stephanie Morales", title: "CMA", rating: 5, avatar: "images/stephanieMorales.jpg" },
+            { quote: "Working in the culinary kitchen means my hands are in water, heat, and everything else all shift long. I honestly didn't expect a manicure to last, but these nails made it through three full kitchen days with zero issues. Miracle even made sure the shape was perfect for food handling. It's become my little treat between dorm life and classes. 5 stars, I tell everyone about her!", name: "Rebecca Holt", title: "Culinary", rating: 5, avatar: "images/rebeccaHolt.jpg" }
         ];
         const AVAILABLE_SLOTS = {
             weekday: ["4:40 PM", "5:00 PM"],
@@ -953,7 +953,7 @@
                 slide.className = `carousel-slide min-w-full px-3 md:px-6`;
                 slide.innerHTML = `
                     <div class="bg-white/10 backdrop-blur-lg p-10 md:p-12 rounded-3xl border border-white/20 max-w-[620px] mx-auto">
-                        <div class="flex mb-6 text-[#E8B4BC]">${'<i class="fa-regular fa-star"></i>'.repeat(t.rating)}</div>
+                        <div class="flex mb-6 text-[#E8B4BC]">${'<i class="fa-solid fa-star"></i>'.repeat(t.rating)}</div>
                         <div class="text-xl md:text-2xl leading-snug">"${t.quote}"</div>
                         <div class="mt-10 flex items-center gap-x-4">
                             <img src="${t.avatar}" class="w-11 h-11 rounded-2xl ring-2 ring-white/30" alt="">
